@@ -29,6 +29,6 @@ library IshikoLogging
 
     headers
     {
-        ../../Include/Ishiko/Types/linkoptions.h
+        ../../Include/Ishiko/Logging/linkoptions.h
     }
 }
