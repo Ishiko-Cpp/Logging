@@ -1,25 +1,26 @@
-toolsets = gnu vs2017 vs2015 vs2013;
+toolsets = gnu vs2019 vs2017 vs2015 vs2013;
 
-gnu.makefile = ../GNUmakefile/GNUmakefile;
-vs2017.solutionfile = ../VC15/IshikoLogging.sln;
-vs2015.solutionfile = ../VC14/IshikoLogging.sln;
-vs2013.solutionfile = ../VC12/IshikoLogging.sln;
+gnu.makefile = ../gnumake/GNUmakefile;
+vs2019.solutionfile = ../vc16/IshikoLogging.sln;
+vs2017.solutionfile = ../vc15/IshikoLogging.sln;
+vs2015.solutionfile = ../vc14/IshikoLogging.sln;
+vs2013.solutionfile = ../vc12/IshikoLogging.sln;
 
 library IshikoLogging
 {
     archs = x86 x86_64;
 
-    includedirs += ../../Include/Ishiko/Logging;
+    includedirs += ../../include/Ishiko/Logging;
 
     if ($(toolset) == gnu)
     {
         cxx-compiler-options = "-std=c++11";
-        outputdir = ../../Lib;
+        outputdir = ../../lib;
     }
 
     if ($(toolset) != gnu)
     {
-        outputdir = ../../Lib/$(arch);
+        outputdir = ../../lib/$(arch);
     }
 
     if ($(config) == Debug)
@@ -29,6 +30,6 @@ library IshikoLogging
 
     headers
     {
-        ../../Include/Ishiko/Logging/linkoptions.h
+        ../../include/Ishiko/Logging/linkoptions.h
     }
 }
