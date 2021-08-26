@@ -10,11 +10,11 @@ jobs:
       - checkout:
           path: /projects/ishiko/cpp/logging
       - run:
+          name: "Install test dependency: Ishiko/C++ Tests/Core"
+          command: cd /projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/tests.git && cd tests/core/build/gnumake && make
+      - run:
           name: Build
           command: cd /projects/ishiko/cpp/logging/build/gnumake && make
-      - run:
-          name: Test
-          command: cd /projects/ishiko/cpp/logging/tests/build/gnumake && make && ./IshikoLoggingTests
 workflows:
   version: 2
   continuous_build:
