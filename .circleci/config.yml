@@ -12,6 +12,9 @@ jobs:
       - run:
           name: Build
           command: cd /projects/ishiko/cpp/logging/build/gnumake && make
+      - run:
+          name: Test
+          command: cd /projects/ishiko/cpp/logging/tests/build/gnumake && make && ./IshikoLoggingTests
 workflows:
   version: 2
   continuous_build:
