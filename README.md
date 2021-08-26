@@ -1,4 +1,4 @@
-# Ishiko/C++ - Logging
+# Ishiko/C++ Logging
 
 Logging utilities.
 
@@ -12,7 +12,7 @@ Logging utilities.
 
 # Project Status
 
-[![Ishiko-cpp](https://circleci.com/gh/Ishiko-cpp/Logging.svg?style=shield)](https://circleci.com/gh/Ishiko-cpp/Logging)
+[![ishiko-cpp](https://circleci.com/gh/ishiko-cpp/logging.svg?style=shield)](https://circleci.com/gh/ishiko-cpp/logging)
 
 This project is intended for use by its author only.
 
@@ -26,7 +26,7 @@ None.
 
 # License
 
-Copyright (c) 2020 Xavier Leclercq
+Copyright (c) 2020-2021 Xavier Leclercq
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the "Software"),
