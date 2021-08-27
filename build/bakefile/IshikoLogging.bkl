@@ -34,10 +34,13 @@ library IshikoLogging
         ../../include/Ishiko/Logging/linkoptions.h
         ../../include/Ishiko/Logging/Logger.h
         ../../include/Ishiko/Logging/LoggingMacros.h
+        ../../include/Ishiko/Logging/LoggingSink.h
+        ../../include/Ishiko/Logging/StreamLoggingSink.h
     }
 
     sources
     {
         ../../src/Logger.cpp
+        ../../src/StreamLoggingSink.cpp
     }
 }

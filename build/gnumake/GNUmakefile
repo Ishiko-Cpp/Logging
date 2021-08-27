@@ -56,12 +56,15 @@ $(if $(_builddir_error),$(error Failed to create build directory: $(_builddir_er
 endif
 all: ../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoLogging-d,IshikoLogging).a
 
-../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoLogging-d,IshikoLogging).a: $(_builddir)IshikoLogging_Logger.o
-	$(AR) rc $@ $(_builddir)IshikoLogging_Logger.o
+../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoLogging-d,IshikoLogging).a: $(_builddir)IshikoLogging_Logger.o $(_builddir)IshikoLogging_StreamLoggingSink.o
+	$(AR) rc $@ $(_builddir)IshikoLogging_Logger.o $(_builddir)IshikoLogging_StreamLoggingSink.o
 	$(RANLIB) $@
 
 $(_builddir)IshikoLogging_Logger.o: ../../src/Logger.cpp
 	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I../../include/Ishiko/Logging -std=c++11 ../../src/Logger.cpp
+
+$(_builddir)IshikoLogging_StreamLoggingSink.o: ../../src/StreamLoggingSink.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I../../include/Ishiko/Logging -std=c++11 ../../src/StreamLoggingSink.cpp
 
 clean:
 	rm -f $(_builddir)*.o
