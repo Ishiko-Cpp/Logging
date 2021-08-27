@@ -1,0 +1,20 @@
+setting ISHIKO_CPP_LOGGING_ROOT
+{
+    help = "Path to the Ishiko Logging installation";
+    default = '$(ISHIKO_CPP)/logging';
+}
+
+template IshikoLogging
+{
+    includedirs += $(ISHIKO_CPP_LOGGING_ROOT)/include;
+
+    if ($(toolset) == gnu)
+    {
+        libdirs += $(ISHIKO_CPP_LOGGING_ROOT)/lib;
+    }
+
+    if ($(toolset) != gnu)
+    {
+        libdirs += $(ISHIKO_CPP_LOGGING_ROOT)/lib/$(arch);
+    }
+}

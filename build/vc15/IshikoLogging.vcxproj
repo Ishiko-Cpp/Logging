@@ -150,7 +150,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\src\Logger.cpp" />
+    <ClCompile Include="..\..\src\StreamLoggingSink.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\Ishiko\Logging.h" />
     <ClInclude Include="..\..\include\Ishiko\Logging\linkoptions.h" />
+    <ClInclude Include="..\..\include\Ishiko\Logging\Logger.h" />
+    <ClInclude Include="..\..\include\Ishiko\Logging\LoggingMacros.h" />
+    <ClInclude Include="..\..\include\Ishiko\Logging\LoggingSink.h" />
+    <ClInclude Include="..\..\include\Ishiko\Logging\StreamLoggingSink.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
