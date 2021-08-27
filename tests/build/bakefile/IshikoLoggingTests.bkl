@@ -19,8 +19,14 @@ program IshikoLoggingTests : IshikoTestsCore
         libs += IshikoTestsCore IshikoProcess IshikoErrors boost_filesystem boost_system;
     }
 
+    headers
+    {
+        ../../src/LoggingMacrosTests.h
+    }
+
     sources
     {
+        ../../src/LoggingMacrosTests.cpp
         ../../src/main.cpp
     }
 }
