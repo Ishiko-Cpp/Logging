@@ -10,6 +10,9 @@ jobs:
       - checkout:
           path: /projects/ishiko/cpp/logging
       - run:
+          name: "Install test dependency: Ishiko/C++ Errors"
+          command: cd /projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/errors.git && cd errors/build/gnumake && make
+      - run:
           name: "Install test dependency: Ishiko/C++ Process"
           command: cd /projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/process.git && cd process/build/gnumake && make
       - run:
