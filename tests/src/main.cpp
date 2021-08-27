@@ -4,6 +4,7 @@
     See https://github.com/ishiko-cpp/logging/blob/main/LICENSE.txt
 */
 
+#include "LoggerTests.h"
 #include "LoggingMacrosTests.h"
 #include <Ishiko/Tests/Core.h>
 
@@ -14,6 +15,7 @@ int main(int argc, char* argv[])
     TestHarness theTestHarness("IshikoLogging");
 
     TestSequence& theTests = theTestHarness.tests();
+    theTests.append<LoggerTests>();
     theTests.append<LoggingMacrosTests>();
 
     return theTestHarness.run();
