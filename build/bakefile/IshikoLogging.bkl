@@ -32,6 +32,12 @@ library IshikoLogging
     {
         ../../include/Ishiko/Logging.h
         ../../include/Ishiko/Logging/linkoptions.h
+        ../../include/Ishiko/Logging/Logger.h
         ../../include/Ishiko/Logging/LoggingMacros.h
+    }
+
+    sources
+    {
+        ../../src/Logger.cpp
     }
 }
