@@ -1,4 +1,5 @@
 ishikopath = envvar("ISHIKO_CPP");
+import $(ishikopath)/logging/include/Ishiko/Logging.bkl;
 import $(ishikopath)/tests/include/Ishiko/Tests/Core.bkl;
 
 toolsets = gnu vs2019 vs2017 vs2015 vs2013;
@@ -9,14 +10,14 @@ vs2017.solutionfile = ../vc15/IshikoLoggingTests.sln;
 vs2015.solutionfile = ../vc14/IshikoLoggingTests.sln;
 vs2013.solutionfile = ../vc12/IshikoLoggingTests.sln;
 
-program IshikoLoggingTests : IshikoTestsCore
+program IshikoLoggingTests : IshikoLogging, IshikoTestsCore
 {
     archs = x86 x86_64;
 
     if ($(toolset) == gnu)
     {
         cxx-compiler-options = "-std=c++11";
-        libs += IshikoTestsCore IshikoProcess IshikoErrors boost_filesystem boost_system;
+        libs += IshikoLogging IshikoTestsCore IshikoProcess IshikoErrors boost_filesystem boost_system;
     }
 
     headers
