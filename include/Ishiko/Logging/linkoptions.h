@@ -1,11 +1,11 @@
 /*
-    Copyright (c) 2020 Xavier Leclercq
+    Copyright (c) 2020-2021 Xavier Leclercq
     Released under the MIT License
-    See https://github.com/Ishiko-cpp/Logging/blob/master/LICENSE.txt
+    See https://github.com/ishiko-cpp/logging/blob/main/LICENSE.txt
 */
 
-#ifndef _ISHIKO_LOGGING_LINKOPTIONS_H_
-#define _ISHIKO_LOGGING_LINKOPTIONS_H_
+#ifndef _ISHIKO_CPP_LOGGING_LINKOPTIONS_H_
+#define _ISHIKO_CPP_LOGGING_LINKOPTIONS_H_
 
 #ifdef _DEBUG
 #pragma comment(lib, "IshikoLogging-d.lib")
