@@ -5,10 +5,16 @@
 */
 
 #include "LoggingMacrosTests.h"
+#include "Ishiko/Logging/LoggingMacros.h"
 
 using namespace Ishiko::Tests;
 
 LoggingMacrosTests::LoggingMacrosTests(const TestNumber& number, const TestEnvironment& environment)
     : TestSequence(number, "Logging macros tests", environment)
+{
+    append<HeapAllocationErrorsTest>("ISHIKO_LOG_INFO test 1", IshikoLogInfoMacroTest1);
+}
+
+void LoggingMacrosTests::IshikoLogInfoMacroTest1(Test& test)
 {
 }
