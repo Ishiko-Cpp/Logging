@@ -33,8 +33,10 @@ void LoggerTests::InfoTest1(Test& test)
 {
     std::stringstream stream;
     StreamLoggingSink sink(stream);
-
     Logger logger(sink);
 
     logger.info("message");
+
+    ISHIKO_FAIL_IF_NEQ(stream.str(), "message");
+    ISHIKO_PASS();
 }

@@ -18,6 +18,8 @@ class StreamLoggingSink : public LoggingSink
 public:
     StreamLoggingSink(std::ostream& stream);
 
+    void send(const std::string& record) override;
+
     std::ostream& stream();
 
 private:

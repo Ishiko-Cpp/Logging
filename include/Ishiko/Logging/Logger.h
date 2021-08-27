@@ -19,6 +19,9 @@ public:
     Logger(LoggingSink& sink);
 
     void info(const std::string& message);
+
+private:
+    LoggingSink& m_sink;
 };
 
 }

@@ -10,11 +10,13 @@ namespace Ishiko
 {
 
 Logger::Logger(LoggingSink& sink)
+    : m_sink(sink)
 {
 }
 
 void Logger::info(const std::string& message)
 {
+    m_sink.send(message);
 }
 
 }
