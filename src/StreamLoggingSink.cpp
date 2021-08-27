@@ -5,3 +5,18 @@
 */
 
 #include "StreamLoggingSink.h"
+
+namespace Ishiko
+{
+
+StreamLoggingSink::StreamLoggingSink(std::ostream& stream)
+    : m_stream(stream)
+{
+}
+
+std::ostream& StreamLoggingSink::stream()
+{
+    return m_stream;
+}
+
+}

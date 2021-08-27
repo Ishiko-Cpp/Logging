@@ -7,7 +7,10 @@
 #ifndef _ISHIKO_CPP_LOGGING_H_
 #define _ISHIKO_CPP_LOGGING_H_
 
+#include "Logger.h"
 #include "Logging/LoggingMacros.h"
+#include "LoggingSink.h"
+#include "StreamLoggingSink.h"
 
 #include "Logging/linkoptions.h"
 

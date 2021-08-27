@@ -7,4 +7,13 @@
 #ifndef _ISHIKO_CPP_LOGGING_LOGGINGSINK_H_
 #define _ISHIKO_CPP_LOGGING_LOGGINGSINK_H_
 
+namespace Ishiko
+{
+
+class LoggingSink
+{
+};
+
+}
+
 #endif

@@ -7,4 +7,23 @@
 #ifndef _ISHIKO_CPP_LOGGING_STREAMLOGGINGSINK_H_
 #define _ISHIKO_CPP_LOGGING_STREAMLOGGINGSINK_H_
 
+#include "LoggingSink.h"
+#include <ostream>
+
+namespace Ishiko
+{
+
+class StreamLoggingSink : public LoggingSink
+{
+public:
+    StreamLoggingSink(std::ostream& stream);
+
+    std::ostream& stream();
+
+private:
+    std::ostream& m_stream;
+};
+
+}
+
 #endif
