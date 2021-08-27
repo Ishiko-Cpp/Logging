@@ -7,13 +7,18 @@
 #ifndef _ISHIKO_CPP_LOGGING_LOGGER_H_
 #define _ISHIKO_CPP_LOGGING_LOGGER_H_
 
+#include "LoggingSink.h"
+#include <string>
+
 namespace Ishiko
 {
 
 class Logger
 {
 public:
-    void info();
+    Logger(LoggingSink& sink);
+
+    void info(const std::string& message);
 };
 
 }

@@ -6,6 +6,8 @@
 
 #include "LoggerTests.h"
 #include "Ishiko/Logging/Logger.h"
+#include "Ishiko/Logging/StreamLoggingSink.h"
+#include <sstream>
 
 using namespace Ishiko;
 using namespace Ishiko::Tests;
@@ -19,14 +21,20 @@ LoggerTests::LoggerTests(const TestNumber& number, const TestEnvironment& enviro
 
 void LoggerTests::ConstructorTest1(Test& test)
 {
-    Logger logger;
+    std::stringstream stream;
+    StreamLoggingSink sink(stream);
+
+    Logger logger(sink);
 
     ISHIKO_PASS();
 }
 
 void LoggerTests::InfoTest1(Test& test)
 {
-    Logger logger;
+    std::stringstream stream;
+    StreamLoggingSink sink(stream);
 
-    logger.info();
+    Logger logger(sink);
+
+    logger.info("message");
 }

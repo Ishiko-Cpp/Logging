@@ -9,7 +9,11 @@
 namespace Ishiko
 {
 
-void Logger::info()
+Logger::Logger(LoggingSink& sink)
+{
+}
+
+void Logger::info(const std::string& message)
 {
 }
 
