@@ -6,6 +6,7 @@
 
 #include "LoggerTests.h"
 #include "LoggingMacrosTests.h"
+#include "Ishiko/Logging/linkoptions.h"
 #include <Ishiko/Tests/Core.h>
 
 using namespace Ishiko::Tests;

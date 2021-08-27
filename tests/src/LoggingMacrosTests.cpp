@@ -5,8 +5,10 @@
 */
 
 #include "LoggingMacrosTests.h"
+#include "Ishiko/Logging/Logger.h"
 #include "Ishiko/Logging/LoggingMacros.h"
 
+using namespace Ishiko;
 using namespace Ishiko::Tests;
 
 LoggingMacrosTests::LoggingMacrosTests(const TestNumber& number, const TestEnvironment& environment)
@@ -17,4 +19,9 @@ LoggingMacrosTests::LoggingMacrosTests(const TestNumber& number, const TestEnvir
 
 void LoggingMacrosTests::IshikoLogInfoMacroTest1(Test& test)
 {
+    Logger logger;
+
+    ISHIKO_LOG_INFO("Message");
+
+
 }

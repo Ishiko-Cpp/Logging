@@ -7,6 +7,6 @@
 #ifndef _ISHIKO_CPP_LOGGING_LOGGINGMACROS_H_
 #define _ISHIKO_CPP_LOGGING_LOGGINGMACROS_H_
 
-#define ISHIKO_LOG_INFO() std::cout << std::endl
+#define ISHIKO_LOG_INFO() logger.info();
 
 #endif

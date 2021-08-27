@@ -7,14 +7,26 @@
 #include "LoggerTests.h"
 #include "Ishiko/Logging/Logger.h"
 
+using namespace Ishiko;
 using namespace Ishiko::Tests;
 
 LoggerTests::LoggerTests(const TestNumber& number, const TestEnvironment& environment)
     : TestSequence(number, "Logger tests", environment)
 {
     append<HeapAllocationErrorsTest>("Constructor test 1", ConstructorTest1);
+    append<HeapAllocationErrorsTest>("info test 1", InfoTest1);
 }
 
 void LoggerTests::ConstructorTest1(Test& test)
 {
+    Logger logger;
+
+    ISHIKO_PASS();
+}
+
+void LoggerTests::InfoTest1(Test& test)
+{
+    Logger logger;
+
+    logger.info();
 }

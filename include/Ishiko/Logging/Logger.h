@@ -9,14 +9,13 @@
 
 namespace Ishiko
 {
-namespace Logging
-{
 
 class Logger
 {
+public:
+    void info();
 };
 
-}
 }
 
 #endif

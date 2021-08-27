@@ -5,3 +5,12 @@
 */
 
 #include "Logger.h"
+
+namespace Ishiko
+{
+
+void Logger::info()
+{
+}
+
+}
