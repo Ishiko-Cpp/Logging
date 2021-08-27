@@ -23,6 +23,9 @@
     <ClInclude Include="..\..\src\LoggingMacrosTests.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\StreamLoggingSinkTests.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\LoggerTests.cpp">
@@ -32,6 +35,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\StreamLoggingSinkTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

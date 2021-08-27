@@ -155,10 +155,12 @@
     <ClCompile Include="..\..\src\LoggerTests.cpp" />
     <ClCompile Include="..\..\src\LoggingMacrosTests.cpp" />
     <ClCompile Include="..\..\src\main.cpp" />
+    <ClCompile Include="..\..\src\StreamLoggingSinkTests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\LoggerTests.h" />
     <ClInclude Include="..\..\src\LoggingMacrosTests.h" />
+    <ClInclude Include="..\..\src\StreamLoggingSinkTests.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
