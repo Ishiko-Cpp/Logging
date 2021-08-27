@@ -22,11 +22,13 @@ program IshikoLoggingTests : IshikoLogging, IshikoTestsCore
 
     headers
     {
+        ../../src/LoggerTests.h
         ../../src/LoggingMacrosTests.h
     }
 
     sources
     {
+        ../../src/LoggerTests.cpp
         ../../src/LoggingMacrosTests.cpp
         ../../src/main.cpp
     }

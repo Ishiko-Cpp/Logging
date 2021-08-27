@@ -92,8 +92,11 @@ ISHIKO_CPP_TESTFRAMEWORK_ROOT ?= $(ISHIKO_CPP)/tests
 
 all: $(_builddir)IshikoLoggingTests
 
-$(_builddir)IshikoLoggingTests: $(_builddir)IshikoLoggingTests_LoggingMacrosTests.o $(_builddir)IshikoLoggingTests_main.o
-	$(CXX) -o $@ $(LDFLAGS) $(_builddir)IshikoLoggingTests_LoggingMacrosTests.o $(_builddir)IshikoLoggingTests_main.o -L$(ISHIKO_CPP_LOGGING_ROOT)/lib -L$(ISHIKO_CPP_ERRORS_ROOT)/lib -L$(ISHIKO_CPP_BOOST_ROOT)/lib -L$(ISHIKO_CPP_FILESYSTEM_ROOT)/lib -L$(ISHIKO_CPP_TEXT_ROOT)/lib -L$(ISHIKO_CPP_TYPES_ROOT)/lib -L$(ISHIKO_CPP_DIFF_ROOT)/lib -L$(ISHIKO_CPP_PROCESS_ROOT)/lib -L$(ISHIKO_CPP_TESTFRAMEWORK_ROOT)/lib -lIshikoLogging -lIshikoTestsCore -lIshikoProcess -lIshikoErrors -lboost_filesystem -lboost_system -pthread
+$(_builddir)IshikoLoggingTests: $(_builddir)IshikoLoggingTests_LoggerTests.o $(_builddir)IshikoLoggingTests_LoggingMacrosTests.o $(_builddir)IshikoLoggingTests_main.o
+	$(CXX) -o $@ $(LDFLAGS) $(_builddir)IshikoLoggingTests_LoggerTests.o $(_builddir)IshikoLoggingTests_LoggingMacrosTests.o $(_builddir)IshikoLoggingTests_main.o -L$(ISHIKO_CPP_LOGGING_ROOT)/lib -L$(ISHIKO_CPP_ERRORS_ROOT)/lib -L$(ISHIKO_CPP_BOOST_ROOT)/lib -L$(ISHIKO_CPP_FILESYSTEM_ROOT)/lib -L$(ISHIKO_CPP_TEXT_ROOT)/lib -L$(ISHIKO_CPP_TYPES_ROOT)/lib -L$(ISHIKO_CPP_DIFF_ROOT)/lib -L$(ISHIKO_CPP_PROCESS_ROOT)/lib -L$(ISHIKO_CPP_TESTFRAMEWORK_ROOT)/lib -lIshikoLogging -lIshikoTestsCore -lIshikoProcess -lIshikoErrors -lboost_filesystem -lboost_system -pthread
+
+$(_builddir)IshikoLoggingTests_LoggerTests.o: ../../src/LoggerTests.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread -I$(ISHIKO_CPP_LOGGING_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I$(ISHIKO_CPP_DIFF_ROOT)/include -I$(ISHIKO_CPP_PROCESS_ROOT)/include -I$(ISHIKO_CPP_TESTFRAMEWORK_ROOT)/include -std=c++11 ../../src/LoggerTests.cpp
 
 $(_builddir)IshikoLoggingTests_LoggingMacrosTests.o: ../../src/LoggingMacrosTests.cpp
 	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread -I$(ISHIKO_CPP_LOGGING_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I$(ISHIKO_CPP_DIFF_ROOT)/include -I$(ISHIKO_CPP_PROCESS_ROOT)/include -I$(ISHIKO_CPP_TESTFRAMEWORK_ROOT)/include -std=c++11 ../../src/LoggingMacrosTests.cpp
