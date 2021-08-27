@@ -30,6 +30,8 @@ library IshikoLogging
 
     headers
     {
+        ../../include/Ishiko/Logging.h
         ../../include/Ishiko/Logging/linkoptions.h
+        ../../include/Ishiko/Logging/LoggingMacros.h
     }
 }
