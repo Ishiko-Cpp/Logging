@@ -20,6 +20,7 @@ LoggingMacrosTests::LoggingMacrosTests(const TestNumber& number, const TestEnvir
     append<HeapAllocationErrorsTest>("ISHIKO_LOG_WARNING test 1", IshikoLogWarningMacroTest1);
     append<HeapAllocationErrorsTest>("ISHIKO_LOG_INFO test 1", IshikoLogInfoMacroTest1);
     append<HeapAllocationErrorsTest>("ISHIKO_LOG_TRACE test 1", IshikoLogTraceMacroTest1);
+    append<HeapAllocationErrorsTest>("ISHIKO_LOG_TRACE test 2", IshikoLogTraceMacroTest2);
 }
 
 void LoggingMacrosTests::IshikoLogErrorMacroTest1(Test& test)
@@ -63,6 +64,18 @@ void LoggingMacrosTests::IshikoLogTraceMacroTest1(Test& test)
     std::stringstream stream;
     StreamLoggingSink sink(stream);
     Logger logger(sink);
+
+    ISHIKO_LOG_TRACE("message");
+
+    ISHIKO_FAIL_IF_NEQ(stream.str(), "");
+    ISHIKO_PASS();
+}
+
+void LoggingMacrosTests::IshikoLogTraceMacroTest2(Test& test)
+{
+    std::stringstream stream;
+    StreamLoggingSink sink(stream);
+    Logger logger(sink, Logger::Level::trace);
 
     ISHIKO_LOG_TRACE("message");
 

@@ -20,6 +20,7 @@ LoggerTests::LoggerTests(const TestNumber& number, const TestEnvironment& enviro
     append<HeapAllocationErrorsTest>("warning test 1", WarningTest1);
     append<HeapAllocationErrorsTest>("info test 1", InfoTest1);
     append<HeapAllocationErrorsTest>("trace test 1", TraceTest1);
+    append<HeapAllocationErrorsTest>("trace test 2", TraceTest2);
 }
 
 void LoggerTests::ConstructorTest1(Test& test)
@@ -73,6 +74,18 @@ void LoggerTests::TraceTest1(Test& test)
     std::stringstream stream;
     StreamLoggingSink sink(stream);
     Logger logger(sink);
+
+    logger.trace("message");
+
+    ISHIKO_FAIL_IF_NEQ(stream.str(), "");
+    ISHIKO_PASS();
+}
+
+void LoggerTests::TraceTest2(Test& test)
+{
+    std::stringstream stream;
+    StreamLoggingSink sink(stream);
+    Logger logger(sink, Logger::Level::trace);
 
     logger.trace("message");
 

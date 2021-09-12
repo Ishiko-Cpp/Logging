@@ -20,6 +20,7 @@ private:
     static void WarningTest1(Ishiko::Tests::Test& test);
     static void InfoTest1(Ishiko::Tests::Test& test);
     static void TraceTest1(Ishiko::Tests::Test& test);
+    static void TraceTest2(Ishiko::Tests::Test& test);
 };
 
 #endif

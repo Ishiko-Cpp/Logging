@@ -25,6 +25,9 @@ public:
     };
 
     Logger(LoggingSink& sink);
+    Logger(LoggingSink& sink, Level level);
+
+    void setLevel(Level level);
 
     void error(const std::string& message);
     void warning(const std::string& message);

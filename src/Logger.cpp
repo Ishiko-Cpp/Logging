@@ -14,6 +14,16 @@ Logger::Logger(LoggingSink& sink)
 {
 }
 
+Logger::Logger(LoggingSink& sink, Level level)
+    : m_sink(sink), m_level(level)
+{
+}
+
+void Logger::setLevel(Level level)
+{
+    m_level = level;
+}
+
 void Logger::error(const std::string& message)
 {
     if (m_level >= Level::error)
