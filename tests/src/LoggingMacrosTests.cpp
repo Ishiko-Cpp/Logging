@@ -16,7 +16,37 @@ using namespace Ishiko::Tests;
 LoggingMacrosTests::LoggingMacrosTests(const TestNumber& number, const TestEnvironment& environment)
     : TestSequence(number, "Logging macros tests", environment)
 {
+    append<HeapAllocationErrorsTest>("ISHIKO_LOG_ERROR test 1", IshikoLogErrorMacroTest1);
+    append<HeapAllocationErrorsTest>("ISHIKO_LOG_WARNING test 1", IshikoLogWarningMacroTest1);
     append<HeapAllocationErrorsTest>("ISHIKO_LOG_INFO test 1", IshikoLogInfoMacroTest1);
+    append<HeapAllocationErrorsTest>("ISHIKO_LOG_TRACE test 1", IshikoLogTraceMacroTest1);
+    append<HeapAllocationErrorsTest>("ISHIKO_LOG_TRACE test 2", IshikoLogTraceMacroTest2);
+}
+
+void LoggingMacrosTests::IshikoLogErrorMacroTest1(Test& test)
+{
+    std::stringstream stream;
+    StreamLoggingSink sink(stream);
+    Logger logger(sink);
+
+#define ISHIKO_LOG_MIN_DYNAMIC_LEVEL Logger::Level::error
+    ISHIKO_LOG_ERROR("message");
+    
+    ISHIKO_FAIL_IF_NEQ(stream.str(), "message");
+    ISHIKO_PASS();
+}
+
+void LoggingMacrosTests::IshikoLogWarningMacroTest1(Test& test)
+{
+    std::stringstream stream;
+    StreamLoggingSink sink(stream);
+    Logger logger(sink);
+
+#define ISHIKO_LOG_MIN_DYNAMIC_LEVEL Logger::Level::warning
+    ISHIKO_LOG_WARNING("message");
+
+    ISHIKO_FAIL_IF_NEQ(stream.str(), "message");
+    ISHIKO_PASS();
 }
 
 void LoggingMacrosTests::IshikoLogInfoMacroTest1(Test& test)
@@ -25,8 +55,35 @@ void LoggingMacrosTests::IshikoLogInfoMacroTest1(Test& test)
     StreamLoggingSink sink(stream);
     Logger logger(sink);
 
+#define ISHIKO_LOG_MIN_DYNAMIC_LEVEL Logger::Level::info
     ISHIKO_LOG_INFO("message");
-    
+
+    ISHIKO_FAIL_IF_NEQ(stream.str(), "message");
+    ISHIKO_PASS();
+}
+
+void LoggingMacrosTests::IshikoLogTraceMacroTest1(Test& test)
+{
+    std::stringstream stream;
+    StreamLoggingSink sink(stream);
+    Logger logger(sink);
+
+#define ISHIKO_LOG_MIN_DYNAMIC_LEVEL Logger::Level::trace
+    ISHIKO_LOG_TRACE("message");
+
+    ISHIKO_FAIL_IF_NEQ(stream.str(), "");
+    ISHIKO_PASS();
+}
+
+void LoggingMacrosTests::IshikoLogTraceMacroTest2(Test& test)
+{
+    std::stringstream stream;
+    StreamLoggingSink sink(stream);
+    Logger logger(sink, Logger::Level::trace);
+
+#define ISHIKO_LOG_MIN_DYNAMIC_LEVEL Logger::Level::trace
+    ISHIKO_LOG_TRACE("message");
+
     ISHIKO_FAIL_IF_NEQ(stream.str(), "message");
     ISHIKO_PASS();
 }
