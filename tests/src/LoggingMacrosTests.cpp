@@ -29,6 +29,7 @@ void LoggingMacrosTests::IshikoLogErrorMacroTest1(Test& test)
     StreamLoggingSink sink(stream);
     Logger logger(sink);
 
+#define ISHIKO_LOG_MIN_DYNAMIC_LEVEL Logger::Level::error
     ISHIKO_LOG_ERROR("message");
     
     ISHIKO_FAIL_IF_NEQ(stream.str(), "message");
@@ -41,6 +42,7 @@ void LoggingMacrosTests::IshikoLogWarningMacroTest1(Test& test)
     StreamLoggingSink sink(stream);
     Logger logger(sink);
 
+#define ISHIKO_LOG_MIN_DYNAMIC_LEVEL Logger::Level::warning
     ISHIKO_LOG_WARNING("message");
 
     ISHIKO_FAIL_IF_NEQ(stream.str(), "message");
@@ -53,6 +55,7 @@ void LoggingMacrosTests::IshikoLogInfoMacroTest1(Test& test)
     StreamLoggingSink sink(stream);
     Logger logger(sink);
 
+#define ISHIKO_LOG_MIN_DYNAMIC_LEVEL Logger::Level::info
     ISHIKO_LOG_INFO("message");
 
     ISHIKO_FAIL_IF_NEQ(stream.str(), "message");
@@ -65,6 +68,7 @@ void LoggingMacrosTests::IshikoLogTraceMacroTest1(Test& test)
     StreamLoggingSink sink(stream);
     Logger logger(sink);
 
+#define ISHIKO_LOG_MIN_DYNAMIC_LEVEL Logger::Level::trace
     ISHIKO_LOG_TRACE("message");
 
     ISHIKO_FAIL_IF_NEQ(stream.str(), "");
@@ -77,6 +81,7 @@ void LoggingMacrosTests::IshikoLogTraceMacroTest2(Test& test)
     StreamLoggingSink sink(stream);
     Logger logger(sink, Logger::Level::trace);
 
+#define ISHIKO_LOG_MIN_DYNAMIC_LEVEL Logger::Level::trace
     ISHIKO_LOG_TRACE("message");
 
     ISHIKO_FAIL_IF_NEQ(stream.str(), "message");
