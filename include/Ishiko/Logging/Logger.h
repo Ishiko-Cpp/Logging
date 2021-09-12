@@ -18,7 +18,10 @@ class Logger
 public:
     Logger(LoggingSink& sink);
 
+    void error(const std::string& message);
+    void warning(const std::string& message);
     void info(const std::string& message);
+    void trace(const std::string& message);
 
 private:
     LoggingSink& m_sink;

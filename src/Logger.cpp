@@ -14,7 +14,22 @@ Logger::Logger(LoggingSink& sink)
 {
 }
 
+void Logger::error(const std::string& message)
+{
+    m_sink.send(message);
+}
+
+void Logger::warning(const std::string& message)
+{
+    m_sink.send(message);
+}
+
 void Logger::info(const std::string& message)
+{
+    m_sink.send(message);
+}
+
+void Logger::trace(const std::string& message)
 {
     m_sink.send(message);
 }
