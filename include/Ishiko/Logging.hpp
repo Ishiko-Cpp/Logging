@@ -4,8 +4,8 @@
     See https://github.com/ishiko-cpp/logging/blob/main/LICENSE.txt
 */
 
-#ifndef _ISHIKO_CPP_LOGGING_H_
-#define _ISHIKO_CPP_LOGGING_H_
+#ifndef _ISHIKO_CPP_LOGGING_HPP_
+#define _ISHIKO_CPP_LOGGING_HPP_
 
 #include "Logging/Logger.h"
 #include "Logging/LoggingMacros.h"

@@ -16,12 +16,27 @@ namespace Ishiko
 class Logger
 {
 public:
-    Logger(LoggingSink& sink);
+    enum class Level
+    {
+        error = 1,
+        warning = 2,
+        info = 3,
+        trace = 4
+    };
 
+    Logger(LoggingSink& sink);
+    Logger(LoggingSink& sink, Level level);
+
+    void setLevel(Level level);
+
+    void error(const std::string& message);
+    void warning(const std::string& message);
     void info(const std::string& message);
+    void trace(const std::string& message);
 
 private:
     LoggingSink& m_sink;
+    Level m_level;
 };
 
 }

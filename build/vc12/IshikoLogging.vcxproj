@@ -154,7 +154,7 @@
     <ClCompile Include="..\..\src\StreamLoggingSink.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\include\Ishiko\Logging.h" />
+    <ClInclude Include="..\..\include\Ishiko\Logging.hpp" />
     <ClInclude Include="..\..\include\Ishiko\Logging\linkoptions.h" />
     <ClInclude Include="..\..\include\Ishiko\Logging\Logger.h" />
     <ClInclude Include="..\..\include\Ishiko\Logging\LoggingMacros.h" />

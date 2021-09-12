@@ -15,7 +15,11 @@ public:
     LoggingMacrosTests(const Ishiko::Tests::TestNumber& number, const Ishiko::Tests::TestEnvironment& environment);
 
 private:
+    static void IshikoLogErrorMacroTest1(Ishiko::Tests::Test& test);
+    static void IshikoLogWarningMacroTest1(Ishiko::Tests::Test& test);
     static void IshikoLogInfoMacroTest1(Ishiko::Tests::Test& test);
+    static void IshikoLogTraceMacroTest1(Ishiko::Tests::Test& test);
+    static void IshikoLogTraceMacroTest2(Ishiko::Tests::Test& test);
 };
 
 #endif
