@@ -24,14 +24,6 @@ void Logger::setLevel(Level level)
     m_level = level;
 }
 
-void Logger::error(const std::string& message)
-{
-    if (m_level >= Level::error)
-    {
-        m_sink.send(message);
-    }
-}
-
 void Logger::warning(const std::string& message)
 {
     if (m_level >= Level::warning)

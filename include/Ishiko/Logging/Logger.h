@@ -8,6 +8,7 @@
 #define _ISHIKO_CPP_LOGGING_LOGGER_H_
 
 #include "LoggingSink.h"
+#include <fmt/format.h>
 #include <string>
 
 namespace Ishiko
@@ -29,7 +30,8 @@ public:
 
     void setLevel(Level level);
 
-    void error(const std::string& message);
+    template <typename... Args>
+    void error(const std::string& message, Args&&... args);
     void warning(const std::string& message);
     void info(const std::string& message);
     void trace(const std::string& message);
@@ -38,6 +40,16 @@ private:
     LoggingSink& m_sink;
     Level m_level;
 };
+
+template <typename... Args>
+void Logger::error(const std::string& message, Args&&... args)
+{
+    if (m_level >= Level::error)
+    {
+        std::string formattedMessage = fmt::format(message, std::forward<Args>(args)...);
+        m_sink.send(formattedMessage);
+    }
+}
 
 }
 
