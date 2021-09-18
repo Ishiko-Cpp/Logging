@@ -19,10 +19,11 @@ class Logger
 public:
     enum class Level
     {
-        error = 1,
-        warning = 2,
-        info = 3,
-        trace = 4
+        fatal = 1,
+        error = 2,
+        warning = 3,
+        info = 4,
+        trace = 5
     };
 
     Logger(LoggingSink& sink);
