@@ -9,7 +9,7 @@ jobs:
           command: mkdir -p /projects/ishiko/cpp && echo 'export ISHIKO_CPP="/projects/ishiko/cpp"' >> $BASH_ENV
       - run:
           name: "Install build dependency: Ishiko/C++ fmt"
-          command: cd /projects/ishiko/cpp && mkdir fmtlib && git clone https://github.com/ishiko-cpp/fmtlib_fmt.git fmt && cd fmt && mkdir build && cd build && cmake -DCMAKE_INSTALL_PREFIX=/usr/local/ishiko/cpp .. && make && make install && echo 'export ISHIKO_CPP_THIRD_PARTY_FMT="/usr/local/ishiko/cpp"' >> $BASH_ENV
+          command: cd /projects/ishiko/cpp && mkdir fmtlib && git clone https://github.com/ishiko-cpp/fmtlib_fmt.git fmt && cd fmt && mkdir build && cd build && cmake -DCMAKE_INSTALL_PREFIX=/projects/ishiko/cpp .. && make && make install && echo 'export ISHIKO_CPP_THIRD_PARTY_FMT="/projects/ishiko/cpp"' >> $BASH_ENV
       - checkout:
           path: /projects/ishiko/cpp/logging
       - run:
