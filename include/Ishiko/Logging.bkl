@@ -1,10 +1,13 @@
+ishikopath = envvar("ISHIKO_CPP");
+import $(ishikopath)/third-party-glue/include/Ishiko/ThirdParty/fmt.bkl;
+
 setting ISHIKO_CPP_LOGGING_ROOT
 {
     help = "Path to the Ishiko Logging installation";
     default = '$(ISHIKO_CPP)/logging';
 }
 
-template IshikoLogging
+template IshikoLogging : fmt
 {
     includedirs += $(ISHIKO_CPP_LOGGING_ROOT)/include;
 

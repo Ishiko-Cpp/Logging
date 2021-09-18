@@ -33,6 +33,11 @@ override CXXFLAGS += -O2
 else ifneq (,$(config))
 $(warning Unknown configuration "$(config)")
 endif
+#
+# Additionally, this makefile is customizable with the following
+# settings:
+#
+#      ISHIKO_CPP_FMT_ROOT  Path to the fmt installation
 
 # Use "make RANLIB=''" for platforms without ranlib.
 RANLIB ?= ranlib
@@ -54,6 +59,16 @@ _builddir := $(if $(findstring $(abspath $(builddir)),$(builddir)),,../../)$(bui
 _builddir_error := $(shell mkdir -p $(_builddir) 2>&1)
 $(if $(_builddir_error),$(error Failed to create build directory: $(_builddir_error)))
 endif
+
+# ------------
+# Configurable settings:
+# 
+
+# Path to the fmt installation
+ISHIKO_CPP_FMT_ROOT ?= $(ISHIKO_CPP_THIRD_PARTY_FMT)
+
+# ------------
+
 all: ../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoLogging-d,IshikoLogging).a
 
 ../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoLogging-d,IshikoLogging).a: $(_builddir)IshikoLogging_Logger.o $(_builddir)IshikoLogging_StreamLoggingSink.o
@@ -61,10 +76,10 @@ all: ../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoLogging-
 	$(RANLIB) $@
 
 $(_builddir)IshikoLogging_Logger.o: ../../src/Logger.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I../../include/Ishiko/Logging -std=c++11 ../../src/Logger.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_FMT_ROOT)/include -I../../include/Ishiko/Logging -std=c++11 ../../src/Logger.cpp
 
 $(_builddir)IshikoLogging_StreamLoggingSink.o: ../../src/StreamLoggingSink.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I../../include/Ishiko/Logging -std=c++11 ../../src/StreamLoggingSink.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_FMT_ROOT)/include -I../../include/Ishiko/Logging -std=c++11 ../../src/StreamLoggingSink.cpp
 
 clean:
 	rm -f $(_builddir)*.o
