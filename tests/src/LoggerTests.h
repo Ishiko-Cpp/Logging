@@ -19,9 +19,12 @@ private:
     static void ErrorTest1(Ishiko::Tests::Test& test);
     static void ErrorTest2(Ishiko::Tests::Test& test);
     static void WarningTest1(Ishiko::Tests::Test& test);
+    static void WarningTest2(Ishiko::Tests::Test& test);
     static void InfoTest1(Ishiko::Tests::Test& test);
+    static void InfoTest2(Ishiko::Tests::Test& test);
     static void TraceTest1(Ishiko::Tests::Test& test);
     static void TraceTest2(Ishiko::Tests::Test& test);
+    static void TraceTest3(Ishiko::Tests::Test& test);
 };
 
 #endif

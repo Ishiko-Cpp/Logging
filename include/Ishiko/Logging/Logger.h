@@ -33,9 +33,15 @@ public:
 
     template <typename... Args>
     void error(const std::string& message, Args&&... args);
-    void warning(const std::string& message);
-    void info(const std::string& message);
-    void trace(const std::string& message);
+
+    template <typename... Args>
+    void warning(const std::string& message, Args&&... args);
+
+    template <typename... Args>
+    void info(const std::string& message, Args&&... args);
+
+    template <typename... Args>
+    void trace(const std::string& message, Args&&... args);
 
 private:
     LoggingSink& m_sink;
@@ -46,6 +52,36 @@ template <typename... Args>
 void Logger::error(const std::string& message, Args&&... args)
 {
     if (m_level >= Level::error)
+    {
+        std::string formattedMessage = fmt::format(message, std::forward<Args>(args)...);
+        m_sink.send(formattedMessage);
+    }
+}
+
+template <typename... Args>
+void Logger::warning(const std::string& message, Args&&... args)
+{
+    if (m_level >= Level::warning)
+    {
+        std::string formattedMessage = fmt::format(message, std::forward<Args>(args)...);
+        m_sink.send(formattedMessage);
+    }
+}
+
+template <typename... Args>
+void Logger::info(const std::string& message, Args&&... args)
+{
+    if (m_level >= Level::info)
+    {
+        std::string formattedMessage = fmt::format(message, std::forward<Args>(args)...);
+        m_sink.send(formattedMessage);
+    }
+}
+
+template <typename... Args>
+void Logger::trace(const std::string& message, Args&&... args)
+{
+    if (m_level >= Level::trace)
     {
         std::string formattedMessage = fmt::format(message, std::forward<Args>(args)...);
         m_sink.send(formattedMessage);
