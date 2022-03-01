@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2021 Xavier Leclercq
+    Copyright (c) 2021-2022 Xavier Leclercq
     Released under the MIT License
     See https://github.com/ishiko-cpp/logging/blob/main/LICENSE.txt
 */
@@ -13,8 +13,8 @@
 using namespace Ishiko;
 using namespace Ishiko::Tests;
 
-LoggingMacrosTests::LoggingMacrosTests(const TestNumber& number, const TestEnvironment& environment)
-    : TestSequence(number, "Logging macros tests", environment)
+LoggingMacrosTests::LoggingMacrosTests(const TestNumber& number, const TestContext& context)
+    : TestSequence(number, "Logging macros tests", context)
 {
     append<HeapAllocationErrorsTest>("ISHIKO_LOG_ERROR test 1", IshikoLogErrorMacroTest1);
     append<HeapAllocationErrorsTest>("ISHIKO_LOG_ERROR test 2", IshikoLogErrorMacroTest2);
