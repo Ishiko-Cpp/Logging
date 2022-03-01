@@ -85,7 +85,7 @@ void LoggerTests::ErrorTest4(Test& test)
 
     logger.error("message: {}", Logger::KeyValue{ "key1", "value1" });
 
-    ISHIKO_FAIL_IF_NEQ(stream.str(), "message: data");
+    ISHIKO_FAIL_IF_NEQ(stream.str(), "message: key1, value1");
     ISHIKO_PASS();
 }
 
