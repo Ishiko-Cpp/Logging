@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2021 Xavier Leclercq
+    Copyright (c) 2021-2022 Xavier Leclercq
     Released under the MIT License
     See https://github.com/ishiko-cpp/logging/blob/main/LICENSE.txt
 */
@@ -11,8 +11,8 @@
 using namespace Ishiko;
 using namespace Ishiko::Tests;
 
-StreamLoggingSinkTests::StreamLoggingSinkTests(const TestNumber& number, const TestEnvironment& environment)
-    : TestSequence(number, "StreamLoggingSink tests", environment)
+StreamLoggingSinkTests::StreamLoggingSinkTests(const TestNumber& number, const TestContext& context)
+    : TestSequence(number, "StreamLoggingSink tests", context)
 {
     append<HeapAllocationErrorsTest>("Constructor test 1", ConstructorTest1);
     append<HeapAllocationErrorsTest>("send test 1", SendTest1);
