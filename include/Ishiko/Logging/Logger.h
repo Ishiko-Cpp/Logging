@@ -26,6 +26,12 @@ public:
         trace = 5
     };
 
+    struct KeyValue
+    {
+        const char* key;
+        const char* value;
+    };
+
     Logger(LoggingSink& sink);
     Logger(LoggingSink& sink, Level level);
 
@@ -89,5 +95,24 @@ void Logger::trace(const std::string& message, Args&&... args)
 }
 
 }
+
+template<>
+class fmt::formatter<Ishiko::Logger::KeyValue>
+{
+public:
+    constexpr auto parse(format_parse_context& ctx) -> decltype(ctx.begin()) {
+        // Parse the presentation format and store it in the formatter:
+        auto it = ctx.begin(), end = ctx.end();
+        return it;
+    }
+
+    // Formats the point p using the parsed format specification (presentation)
+    // stored in this formatter.
+    template <typename FormatContext>
+    auto format(const Ishiko::Logger::KeyValue& kv, FormatContext& ctx) -> decltype(ctx.out()) {
+        // ctx.out() is an output iterator to write to.
+        return format_to(ctx.out(), "{}, {}", kv.key, kv.value);
+    }
+};
 
 #endif

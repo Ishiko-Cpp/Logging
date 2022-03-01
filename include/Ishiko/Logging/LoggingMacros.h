@@ -7,10 +7,10 @@
 #ifndef _ISHIKO_CPP_LOGGING_LOGGINGMACROS_H_
 #define _ISHIKO_CPP_LOGGING_LOGGINGMACROS_H_
 
-#define ISHIKO_LOG_ERROR(message)                                     \
+#define ISHIKO_LOG_ERROR(...)                                         \
     if (ISHIKO_LOG_MIN_DYNAMIC_LEVEL >= Ishiko::Logger::Level::error) \
     {                                                                 \
-        logger.error(message);                                        \
+        logger.error(__VA_ARGS__);                                    \
     }
 
 #define ISHIKO_LOG_WARNING(message)                                     \

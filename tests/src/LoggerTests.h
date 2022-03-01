@@ -19,6 +19,7 @@ private:
     static void ErrorTest1(Ishiko::Tests::Test& test);
     static void ErrorTest2(Ishiko::Tests::Test& test);
     static void ErrorTest3(Ishiko::Tests::Test& test);
+    static void ErrorTest4(Ishiko::Tests::Test& test);
     static void WarningTest1(Ishiko::Tests::Test& test);
     static void WarningTest2(Ishiko::Tests::Test& test);
     static void WarningTest3(Ishiko::Tests::Test& test);

@@ -19,6 +19,7 @@ LoggerTests::LoggerTests(const TestNumber& number, const TestEnvironment& enviro
     append<HeapAllocationErrorsTest>("error test 1", ErrorTest1);
     append<HeapAllocationErrorsTest>("error test 2", ErrorTest2);
     append<HeapAllocationErrorsTest>("error test 3", ErrorTest3);
+    append<HeapAllocationErrorsTest>("error test 4", ErrorTest4);
     append<HeapAllocationErrorsTest>("warning test 1", WarningTest1);
     append<HeapAllocationErrorsTest>("warning test 2", WarningTest2);
     append<HeapAllocationErrorsTest>("warning test 3", WarningTest3);
@@ -71,6 +72,18 @@ void LoggerTests::ErrorTest3(Test& test)
     Logger logger(sink);
 
     logger.error("message: {}", "data");
+
+    ISHIKO_FAIL_IF_NEQ(stream.str(), "message: data");
+    ISHIKO_PASS();
+}
+
+void LoggerTests::ErrorTest4(Test& test)
+{
+    std::stringstream stream;
+    StreamLoggingSink sink(stream);
+    Logger logger(sink);
+
+    logger.error("message: {}", Logger::KeyValue{ "key1", "value1" });
 
     ISHIKO_FAIL_IF_NEQ(stream.str(), "message: data");
     ISHIKO_PASS();
