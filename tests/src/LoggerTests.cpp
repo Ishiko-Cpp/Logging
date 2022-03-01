@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2021 Xavier Leclercq
+    Copyright (c) 2021-2022 Xavier Leclercq
     Released under the MIT License
     See https://github.com/ishiko-cpp/logging/blob/main/LICENSE.txt
 */
@@ -12,8 +12,8 @@
 using namespace Ishiko;
 using namespace Ishiko::Tests;
 
-LoggerTests::LoggerTests(const TestNumber& number, const TestEnvironment& environment)
-    : TestSequence(number, "Logger tests", environment)
+LoggerTests::LoggerTests(const TestNumber& number, const TestContext& context)
+    : TestSequence(number, "Logger tests", context)
 {
     append<HeapAllocationErrorsTest>("Constructor test 1", ConstructorTest1);
     append<HeapAllocationErrorsTest>("error test 1", ErrorTest1);
