@@ -9,14 +9,14 @@
 
 #include <Ishiko/Tests/Core.hpp>
 
-class StreamLoggingSinkTests : public Ishiko::Tests::TestSequence
+class StreamLoggingSinkTests : public Ishiko::TestSequence
 {
 public:
-    StreamLoggingSinkTests(const Ishiko::Tests::TestNumber& number, const Ishiko::Tests::TestContext& context);
+    StreamLoggingSinkTests(const Ishiko::TestNumber& number, const Ishiko::TestContext& context);
 
 private:
-    static void ConstructorTest1(Ishiko::Tests::Test& test);
-    static void SendTest1(Ishiko::Tests::Test& test);
+    static void ConstructorTest1(Ishiko::Test& test);
+    static void SendTest1(Ishiko::Test& test);
 };
 
 #endif

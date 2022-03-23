@@ -11,7 +11,6 @@
 #include <sstream>
 
 using namespace Ishiko;
-using namespace Ishiko::Tests;
 
 LoggingMacrosTests::LoggingMacrosTests(const TestNumber& number, const TestContext& context)
     : TestSequence(number, "Logging macros tests", context)
@@ -36,8 +35,8 @@ void LoggingMacrosTests::IshikoLogErrorMacroTest1(Test& test)
 #define ISHIKO_LOG_MIN_DYNAMIC_LEVEL Logger::Level::error
     ISHIKO_LOG_ERROR("message");
     
-    ISHIKO_FAIL_IF_NEQ(stream.str(), "message");
-    ISHIKO_PASS();
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message");
+    ISHIKO_TEST_PASS();
 }
 
 void LoggingMacrosTests::IshikoLogErrorMacroTest2(Test& test)
@@ -50,8 +49,8 @@ void LoggingMacrosTests::IshikoLogErrorMacroTest2(Test& test)
 #define ISHIKO_LOG_MIN_DYNAMIC_LEVEL Logger::Level::error
     ISHIKO_LOG_ERROR("message");
 
-    ISHIKO_FAIL_IF_NEQ(stream.str(), "");
-    ISHIKO_PASS();
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "");
+    ISHIKO_TEST_PASS();
 }
 
 void LoggingMacrosTests::IshikoLogWarningMacroTest1(Test& test)
@@ -64,8 +63,8 @@ void LoggingMacrosTests::IshikoLogWarningMacroTest1(Test& test)
 #define ISHIKO_LOG_MIN_DYNAMIC_LEVEL Logger::Level::warning
     ISHIKO_LOG_WARNING("message");
 
-    ISHIKO_FAIL_IF_NEQ(stream.str(), "message");
-    ISHIKO_PASS();
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message");
+    ISHIKO_TEST_PASS();
 }
 
 void LoggingMacrosTests::IshikoLogWarningMacroTest2(Test& test)
@@ -78,8 +77,8 @@ void LoggingMacrosTests::IshikoLogWarningMacroTest2(Test& test)
 #define ISHIKO_LOG_MIN_DYNAMIC_LEVEL Logger::Level::warning
     ISHIKO_LOG_WARNING("message");
 
-    ISHIKO_FAIL_IF_NEQ(stream.str(), "");
-    ISHIKO_PASS();
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "");
+    ISHIKO_TEST_PASS();
 }
 
 void LoggingMacrosTests::IshikoLogInfoMacroTest1(Test& test)
@@ -92,8 +91,8 @@ void LoggingMacrosTests::IshikoLogInfoMacroTest1(Test& test)
 #define ISHIKO_LOG_MIN_DYNAMIC_LEVEL Logger::Level::info
     ISHIKO_LOG_INFO("message");
 
-    ISHIKO_FAIL_IF_NEQ(stream.str(), "message");
-    ISHIKO_PASS();
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message");
+    ISHIKO_TEST_PASS();
 }
 
 void LoggingMacrosTests::IshikoLogInfoMacroTest2(Test& test)
@@ -106,8 +105,8 @@ void LoggingMacrosTests::IshikoLogInfoMacroTest2(Test& test)
 #define ISHIKO_LOG_MIN_DYNAMIC_LEVEL Logger::Level::info
     ISHIKO_LOG_INFO("message");
 
-    ISHIKO_FAIL_IF_NEQ(stream.str(), "");
-    ISHIKO_PASS();
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "");
+    ISHIKO_TEST_PASS();
 }
 
 void LoggingMacrosTests::IshikoLogTraceMacroTest1(Test& test)
@@ -120,8 +119,8 @@ void LoggingMacrosTests::IshikoLogTraceMacroTest1(Test& test)
 #define ISHIKO_LOG_MIN_DYNAMIC_LEVEL Logger::Level::trace
     ISHIKO_LOG_TRACE("message");
 
-    ISHIKO_FAIL_IF_NEQ(stream.str(), "");
-    ISHIKO_PASS();
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "");
+    ISHIKO_TEST_PASS();
 }
 
 void LoggingMacrosTests::IshikoLogTraceMacroTest2(Test& test)
@@ -134,6 +133,6 @@ void LoggingMacrosTests::IshikoLogTraceMacroTest2(Test& test)
 #define ISHIKO_LOG_MIN_DYNAMIC_LEVEL Logger::Level::trace
     ISHIKO_LOG_TRACE("message");
 
-    ISHIKO_FAIL_IF_NEQ(stream.str(), "message");
-    ISHIKO_PASS();
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message");
+    ISHIKO_TEST_PASS();
 }
