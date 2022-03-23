@@ -9,20 +9,20 @@
 
 #include <Ishiko/Tests/Core.hpp>
 
-class LoggingMacrosTests : public Ishiko::Tests::TestSequence
+class LoggingMacrosTests : public Ishiko::TestSequence
 {
 public:
-    LoggingMacrosTests(const Ishiko::Tests::TestNumber& number, const Ishiko::Tests::TestContext& context);
+    LoggingMacrosTests(const Ishiko::TestNumber& number, const Ishiko::TestContext& context);
 
 private:
-    static void IshikoLogErrorMacroTest1(Ishiko::Tests::Test& test);
-    static void IshikoLogErrorMacroTest2(Ishiko::Tests::Test& test);
-    static void IshikoLogWarningMacroTest1(Ishiko::Tests::Test& test);
-    static void IshikoLogWarningMacroTest2(Ishiko::Tests::Test& test);
-    static void IshikoLogInfoMacroTest1(Ishiko::Tests::Test& test);
-    static void IshikoLogInfoMacroTest2(Ishiko::Tests::Test& test);
-    static void IshikoLogTraceMacroTest1(Ishiko::Tests::Test& test);
-    static void IshikoLogTraceMacroTest2(Ishiko::Tests::Test& test);
+    static void IshikoLogErrorMacroTest1(Ishiko::Test& test);
+    static void IshikoLogErrorMacroTest2(Ishiko::Test& test);
+    static void IshikoLogWarningMacroTest1(Ishiko::Test& test);
+    static void IshikoLogWarningMacroTest2(Ishiko::Test& test);
+    static void IshikoLogInfoMacroTest1(Ishiko::Test& test);
+    static void IshikoLogInfoMacroTest2(Ishiko::Test& test);
+    static void IshikoLogTraceMacroTest1(Ishiko::Test& test);
+    static void IshikoLogTraceMacroTest2(Ishiko::Test& test);
 };
 
 #endif
