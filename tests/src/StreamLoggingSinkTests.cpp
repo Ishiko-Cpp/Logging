@@ -9,7 +9,6 @@
 #include <sstream>
 
 using namespace Ishiko;
-using namespace Ishiko::Tests;
 
 StreamLoggingSinkTests::StreamLoggingSinkTests(const TestNumber& number, const TestContext& context)
     : TestSequence(number, "StreamLoggingSink tests", context)
@@ -24,8 +23,8 @@ void StreamLoggingSinkTests::ConstructorTest1(Test& test)
 
     StreamLoggingSink sink(stream);
 
-    ISHIKO_FAIL_IF_NEQ(&sink.stream(), &stream);
-    ISHIKO_PASS();
+    ISHIKO_TEST_FAIL_IF_NEQ(&sink.stream(), &stream);
+    ISHIKO_TEST_PASS();
 }
 
 void StreamLoggingSinkTests::SendTest1(Test& test)
@@ -35,6 +34,6 @@ void StreamLoggingSinkTests::SendTest1(Test& test)
 
     sink.send("message");
 
-    ISHIKO_FAIL_IF_NEQ(stream.str(), "message");
-    ISHIKO_PASS();
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message");
+    ISHIKO_TEST_PASS();
 }
