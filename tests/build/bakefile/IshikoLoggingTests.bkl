@@ -17,7 +17,7 @@ program IshikoLoggingTests : IshikoLogging, IshikoTestsCore
     if ($(toolset) == gnu)
     {
         cxx-compiler-options = "-std=c++11";
-        libs += IshikoLogging IshikoTestsCore IshikoProcess IshikoErrors boost_filesystem boost_system;
+        libs += IshikoLogging IshikoTestsCore IshikoProcess IshikoErrors fmt boost_filesystem;
     }
 
     headers
