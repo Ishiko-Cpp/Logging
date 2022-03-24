@@ -17,6 +17,7 @@ public:
 private:
     static void IshikoLogErrorMacroTest1(Ishiko::Test& test);
     static void IshikoLogErrorMacroTest2(Ishiko::Test& test);
+    static void IshikoLogErrorMacroTest3(Ishiko::Test& test);
     static void IshikoLogWarningMacroTest1(Ishiko::Test& test);
     static void IshikoLogWarningMacroTest2(Ishiko::Test& test);
     static void IshikoLogInfoMacroTest1(Ishiko::Test& test);
