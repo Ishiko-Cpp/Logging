@@ -18,22 +18,22 @@
         logger.error(__VA_ARGS__);                     \
     }
 
-#define ISHIKO_LOG_WARNING(MAX_LOG_LEVEL, message)       \
+#define ISHIKO_LOG_WARNING(MAX_LOG_LEVEL, ...)           \
     if (MAX_LOG_LEVEL >= Ishiko::Logger::Level::warning) \
     {                                                    \
-        logger.warning(message);                         \
+        logger.warning(__VA_ARGS__);                     \
     }
 
-#define ISHIKO_LOG_INFO(MAX_LOG_LEVEL, message)       \
+#define ISHIKO_LOG_INFO(MAX_LOG_LEVEL, ...)           \
     if (MAX_LOG_LEVEL >= Ishiko::Logger::Level::info) \
     {                                                 \
-        logger.info(message);                         \
+        logger.info(__VA_ARGS__);                     \
     }
 
-#define ISHIKO_LOG_TRACE(MAX_LOG_LEVEL, message)       \
+#define ISHIKO_LOG_TRACE(MAX_LOG_LEVEL, ...)           \
     if (MAX_LOG_LEVEL >= Ishiko::Logger::Level::trace) \
     {                                                  \
-        logger.trace(message);                         \
+        logger.trace(__VA_ARGS__);                     \
     }
 
 #endif
