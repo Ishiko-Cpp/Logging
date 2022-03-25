@@ -4,9 +4,9 @@
     See https://github.com/ishiko-cpp/logging/blob/main/LICENSE.txt
 */
 
-#include "LoggerTests.h"
-#include "Ishiko/Logging/Logger.h"
-#include "Ishiko/Logging/StreamLoggingSink.h"
+#include "LoggerTests.hpp"
+#include "Ishiko/Logging/Logger.hpp"
+#include "Ishiko/Logging/StreamLoggingSink.hpp"
 #include <sstream>
 
 using namespace Ishiko;
