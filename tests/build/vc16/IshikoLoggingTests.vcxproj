@@ -162,9 +162,9 @@
     <ClCompile Include="..\..\src\StreamLoggingSinkTests.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\LoggerTests.h" />
-    <ClInclude Include="..\..\src\LoggingMacrosTests.h" />
-    <ClInclude Include="..\..\src\StreamLoggingSinkTests.h" />
+    <ClInclude Include="..\..\src\LoggerTests.hpp" />
+    <ClInclude Include="..\..\src\LoggingMacrosTests.hpp" />
+    <ClInclude Include="..\..\src\StreamLoggingSinkTests.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
