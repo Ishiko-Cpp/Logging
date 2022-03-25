@@ -151,6 +151,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\Logger.cpp" />
+    <ClCompile Include="..\..\src\NullLoggingSink.cpp" />
     <ClCompile Include="..\..\src\StreamLoggingSink.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -159,6 +160,7 @@
     <ClInclude Include="..\..\include\Ishiko\Logging\Logger.hpp" />
     <ClInclude Include="..\..\include\Ishiko\Logging\LoggingMacros.hpp" />
     <ClInclude Include="..\..\include\Ishiko\Logging\LoggingSink.hpp" />
+    <ClInclude Include="..\..\include\Ishiko\Logging\NullLoggingSink.hpp" />
     <ClInclude Include="..\..\include\Ishiko\Logging\StreamLoggingSink.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
