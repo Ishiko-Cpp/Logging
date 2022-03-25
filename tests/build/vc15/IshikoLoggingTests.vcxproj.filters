@@ -17,13 +17,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\LoggerTests.h">
+    <ClInclude Include="..\..\src\LoggerTests.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\LoggingMacrosTests.h">
+    <ClInclude Include="..\..\src\LoggingMacrosTests.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\StreamLoggingSinkTests.h">
+    <ClInclude Include="..\..\src\StreamLoggingSinkTests.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -22,9 +22,9 @@ program IshikoLoggingTests : IshikoLogging, IshikoTestsCore
 
     headers
     {
-        ../../src/LoggerTests.h
-        ../../src/LoggingMacrosTests.h
-        ../../src/StreamLoggingSinkTests.h
+        ../../src/LoggerTests.hpp
+        ../../src/LoggingMacrosTests.hpp
+        ../../src/StreamLoggingSinkTests.hpp
     }
 
     sources

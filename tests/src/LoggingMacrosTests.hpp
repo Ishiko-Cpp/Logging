@@ -4,8 +4,8 @@
     See https://github.com/ishiko-cpp/logging/blob/main/LICENSE.txt
 */
 
-#ifndef _ISHIKO_CPP_LOGGING_TESTS_LOGGINGMACROSTESTS_H_
-#define _ISHIKO_CPP_LOGGING_TESTS_LOGGINGMACROSTESTS_H_
+#ifndef _ISHIKO_CPP_LOGGING_TESTS_LOGGINGMACROSTESTS_HPP_
+#define _ISHIKO_CPP_LOGGING_TESTS_LOGGINGMACROSTESTS_HPP_
 
 #include <Ishiko/Tests/Core.hpp>
 
