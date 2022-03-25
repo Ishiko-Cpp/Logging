@@ -4,10 +4,10 @@
     See https://github.com/ishiko-cpp/logging/blob/main/LICENSE.txt
 */
 
-#include "LoggingMacrosTests.h"
-#include "Ishiko/Logging/Logger.h"
-#include "Ishiko/Logging/LoggingMacros.h"
-#include "Ishiko/Logging/StreamLoggingSink.h"
+#include "LoggingMacrosTests.hpp"
+#include "Ishiko/Logging/Logger.hpp"
+#include "Ishiko/Logging/LoggingMacros.hpp"
+#include "Ishiko/Logging/StreamLoggingSink.hpp"
 #include <sstream>
 
 using namespace Ishiko;

@@ -38,12 +38,14 @@ library IshikoLogging : fmt
         ../../include/Ishiko/Logging/Logger.hpp
         ../../include/Ishiko/Logging/LoggingMacros.hpp
         ../../include/Ishiko/Logging/LoggingSink.hpp
+        ../../include/Ishiko/Logging/NullLoggingSink.hpp
         ../../include/Ishiko/Logging/StreamLoggingSink.hpp
     }
 
     sources
     {
         ../../src/Logger.cpp
+        ../../src/NullLoggingSink.cpp
         ../../src/StreamLoggingSink.cpp
     }
 }
