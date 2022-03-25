@@ -4,8 +4,8 @@
     See https://github.com/ishiko-cpp/logging/blob/main/LICENSE.txt
 */
 
-#ifndef _ISHIKO_CPP_LOGGING_LOGGINGMACROS_H_
-#define _ISHIKO_CPP_LOGGING_LOGGINGMACROS_H_
+#ifndef _ISHIKO_CPP_LOGGING_LOGGINGMACROS_HPP_
+#define _ISHIKO_CPP_LOGGING_LOGGINGMACROS_HPP_
 
 // TODO: these macros define a MAX_LOG_LEVEL that allows the complete removal of the logging calls at compilation time
 // above a certain level. Individual projects should define a macro defining the max level e.g.

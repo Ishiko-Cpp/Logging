@@ -155,11 +155,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\Ishiko\Logging.hpp" />
-    <ClInclude Include="..\..\include\Ishiko\Logging\linkoptions.h" />
-    <ClInclude Include="..\..\include\Ishiko\Logging\Logger.h" />
-    <ClInclude Include="..\..\include\Ishiko\Logging\LoggingMacros.h" />
-    <ClInclude Include="..\..\include\Ishiko\Logging\LoggingSink.h" />
-    <ClInclude Include="..\..\include\Ishiko\Logging\StreamLoggingSink.h" />
+    <ClInclude Include="..\..\include\Ishiko\Logging\linkoptions.hpp" />
+    <ClInclude Include="..\..\include\Ishiko\Logging\Logger.hpp" />
+    <ClInclude Include="..\..\include\Ishiko\Logging\LoggingMacros.hpp" />
+    <ClInclude Include="..\..\include\Ishiko\Logging\LoggingSink.hpp" />
+    <ClInclude Include="..\..\include\Ishiko\Logging\StreamLoggingSink.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

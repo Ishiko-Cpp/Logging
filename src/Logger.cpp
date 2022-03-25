@@ -4,7 +4,7 @@
     See https://github.com/ishiko-cpp/logging/blob/main/LICENSE.txt
 */
 
-#include "Logger.h"
+#include "Logger.hpp"
 
 namespace Ishiko
 {

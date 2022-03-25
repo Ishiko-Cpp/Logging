@@ -20,19 +20,19 @@
     <ClInclude Include="..\..\include\Ishiko\Logging.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Ishiko\Logging\linkoptions.h">
+    <ClInclude Include="..\..\include\Ishiko\Logging\linkoptions.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Ishiko\Logging\Logger.h">
+    <ClInclude Include="..\..\include\Ishiko\Logging\Logger.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Ishiko\Logging\LoggingMacros.h">
+    <ClInclude Include="..\..\include\Ishiko\Logging\LoggingMacros.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Ishiko\Logging\LoggingSink.h">
+    <ClInclude Include="..\..\include\Ishiko\Logging\LoggingSink.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Ishiko\Logging\StreamLoggingSink.h">
+    <ClInclude Include="..\..\include\Ishiko\Logging\StreamLoggingSink.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

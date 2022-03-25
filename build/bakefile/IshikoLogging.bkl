@@ -34,11 +34,11 @@ library IshikoLogging : fmt
     headers
     {
         ../../include/Ishiko/Logging.hpp
-        ../../include/Ishiko/Logging/linkoptions.h
-        ../../include/Ishiko/Logging/Logger.h
-        ../../include/Ishiko/Logging/LoggingMacros.h
-        ../../include/Ishiko/Logging/LoggingSink.h
-        ../../include/Ishiko/Logging/StreamLoggingSink.h
+        ../../include/Ishiko/Logging/linkoptions.hpp
+        ../../include/Ishiko/Logging/Logger.hpp
+        ../../include/Ishiko/Logging/LoggingMacros.hpp
+        ../../include/Ishiko/Logging/LoggingSink.hpp
+        ../../include/Ishiko/Logging/StreamLoggingSink.hpp
     }
 
     sources
