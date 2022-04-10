@@ -9,7 +9,7 @@
 #include "NullLoggingSinkTests.hpp"
 #include "StreamLoggingSinkTests.hpp"
 #include "Ishiko/Logging/linkoptions.hpp"
-#include <Ishiko/Tests/Core.hpp>
+#include <Ishiko/TestFramework/Core.hpp>
 
 using namespace Ishiko;
 
