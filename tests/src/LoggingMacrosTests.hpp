@@ -7,7 +7,7 @@
 #ifndef _ISHIKO_CPP_LOGGING_TESTS_LOGGINGMACROSTESTS_HPP_
 #define _ISHIKO_CPP_LOGGING_TESTS_LOGGINGMACROSTESTS_HPP_
 
-#include <Ishiko/Tests/Core.hpp>
+#include <Ishiko/TestFramework/Core.hpp>
 
 class LoggingMacrosTests : public Ishiko::TestSequence
 {

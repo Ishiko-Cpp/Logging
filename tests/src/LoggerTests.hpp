@@ -7,7 +7,7 @@
 #ifndef _ISHIKO_CPP_LOGGING_TESTS_LOGGERTESTS_HPP_
 #define _ISHIKO_CPP_LOGGING_TESTS_LOGGERTESTS_HPP_
 
-#include <Ishiko/Tests/Core.hpp>
+#include <Ishiko/TestFramework/Core.hpp>
 
 class LoggerTests : public Ishiko::TestSequence
 {
