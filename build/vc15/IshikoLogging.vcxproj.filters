@@ -35,6 +35,9 @@
     <ClInclude Include="..\..\include\Ishiko\Logging\NullLoggingSink.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\Ishiko\Logging\StandardStreamsLoggingSink.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\include\Ishiko\Logging\StreamLoggingSink.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -44,6 +47,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\NullLoggingSink.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\StandardStreamsLoggingSink.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\StreamLoggingSink.cpp">
