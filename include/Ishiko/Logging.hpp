@@ -12,6 +12,7 @@
 #include "Logging/LoggingMacros.hpp"
 #include "Logging/LoggingSink.hpp"
 #include "Logging/NullLoggingSink.hpp"
+#include "Logging/StandardStreamsLoggingSink.hpp"
 #include "Logging/StreamLoggingSink.hpp"
 
 #endif
