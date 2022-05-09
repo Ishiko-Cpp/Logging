@@ -25,6 +25,7 @@ program IshikoLoggingTests : IshikoLogging, IshikoTestFrameworkCore
         ../../src/LoggerTests.hpp
         ../../src/LoggingMacrosTests.hpp
         ../../src/NullLoggingSinkTests.hpp
+        ../../src/StandardStreamsLoggingSinkTests.hpp
         ../../src/StreamLoggingSinkTests.hpp
     }
 
@@ -34,6 +35,7 @@ program IshikoLoggingTests : IshikoLogging, IshikoTestFrameworkCore
         ../../src/LoggingMacrosTests.cpp
         ../../src/main.cpp
         ../../src/NullLoggingSinkTests.cpp
+        ../../src/StandardStreamsLoggingSinkTests.cpp
         ../../src/StreamLoggingSinkTests.cpp
     }
 }
