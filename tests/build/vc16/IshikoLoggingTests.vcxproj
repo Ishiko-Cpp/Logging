@@ -160,12 +160,14 @@
     <ClCompile Include="..\..\src\LoggingMacrosTests.cpp" />
     <ClCompile Include="..\..\src\main.cpp" />
     <ClCompile Include="..\..\src\NullLoggingSinkTests.cpp" />
+    <ClCompile Include="..\..\src\StandardStreamsLoggingSinkTests.cpp" />
     <ClCompile Include="..\..\src\StreamLoggingSinkTests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\LoggerTests.hpp" />
     <ClInclude Include="..\..\src\LoggingMacrosTests.hpp" />
     <ClInclude Include="..\..\src\NullLoggingSinkTests.hpp" />
+    <ClInclude Include="..\..\src\StandardStreamsLoggingSinkTests.hpp" />
     <ClInclude Include="..\..\src\StreamLoggingSinkTests.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

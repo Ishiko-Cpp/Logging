@@ -33,10 +33,10 @@ void LoggingMacrosTests::IshikoLogErrorMacroTest1(Test& test)
     Logger logger(sink);
 
 #undef MAX_LOG_LEVEL
-#define MAX_LOG_LEVEL Logger::Level::error
+#define MAX_LOG_LEVEL LogLevel::error
     ISHIKO_LOG_ERROR(MAX_LOG_LEVEL, "message");
     
-    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message");
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message\n");
     ISHIKO_TEST_PASS();
 }
 
@@ -44,10 +44,10 @@ void LoggingMacrosTests::IshikoLogErrorMacroTest2(Test& test)
 {
     std::stringstream stream;
     StreamLoggingSink sink(stream);
-    Logger logger(sink, Logger::Level::fatal);
+    Logger logger(sink, LogLevel::fatal);
 
 #undef MAX_LOG_LEVEL
-#define MAX_LOG_LEVEL Logger::Level::error
+#define MAX_LOG_LEVEL LogLevel::error
     ISHIKO_LOG_ERROR(MAX_LOG_LEVEL, "message");
 
     ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "");
@@ -58,10 +58,10 @@ void LoggingMacrosTests::IshikoLogErrorMacroTest3(Test& test)
 {
     std::stringstream stream;
     StreamLoggingSink sink(stream);
-    Logger logger(sink, Logger::Level::error);
+    Logger logger(sink, LogLevel::error);
 
 #undef MAX_LOG_LEVEL
-#define MAX_LOG_LEVEL Logger::Level::fatal
+#define MAX_LOG_LEVEL LogLevel::fatal
     ISHIKO_LOG_ERROR(MAX_LOG_LEVEL, "message");
 
     ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "");
@@ -75,10 +75,10 @@ void LoggingMacrosTests::IshikoLogWarningMacroTest1(Test& test)
     Logger logger(sink);
 
 #undef MAX_LOG_LEVEL
-#define MAX_LOG_LEVEL Logger::Level::warning
+#define MAX_LOG_LEVEL LogLevel::warning
     ISHIKO_LOG_WARNING(MAX_LOG_LEVEL, "message");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message");
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message\n");
     ISHIKO_TEST_PASS();
 }
 
@@ -86,10 +86,10 @@ void LoggingMacrosTests::IshikoLogWarningMacroTest2(Test& test)
 {
     std::stringstream stream;
     StreamLoggingSink sink(stream);
-    Logger logger(sink, Logger::Level::error);
+    Logger logger(sink, LogLevel::error);
 
 #undef MAX_LOG_LEVEL
-#define MAX_LOG_LEVEL Logger::Level::warning
+#define MAX_LOG_LEVEL LogLevel::warning
     ISHIKO_LOG_WARNING(MAX_LOG_LEVEL, "message");
 
     ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "");
@@ -103,10 +103,10 @@ void LoggingMacrosTests::IshikoLogInfoMacroTest1(Test& test)
     Logger logger(sink);
 
 #undef MAX_LOG_LEVEL
-#define MAX_LOG_LEVEL Logger::Level::info
+#define MAX_LOG_LEVEL LogLevel::info
     ISHIKO_LOG_INFO(MAX_LOG_LEVEL, "message");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message");
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message\n");
     ISHIKO_TEST_PASS();
 }
 
@@ -114,10 +114,10 @@ void LoggingMacrosTests::IshikoLogInfoMacroTest2(Test& test)
 {
     std::stringstream stream;
     StreamLoggingSink sink(stream);
-    Logger logger(sink, Logger::Level::warning);
+    Logger logger(sink, LogLevel::warning);
 
 #undef MAX_LOG_LEVEL
-#define MAX_LOG_LEVEL Logger::Level::info
+#define MAX_LOG_LEVEL LogLevel::info
     ISHIKO_LOG_INFO(MAX_LOG_LEVEL, "message");
 
     ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "");
@@ -131,7 +131,7 @@ void LoggingMacrosTests::IshikoLogTraceMacroTest1(Test& test)
     Logger logger(sink);
 
 #undef MAX_LOG_LEVEL
-#define MAX_LOG_LEVEL Logger::Level::trace
+#define MAX_LOG_LEVEL LogLevel::trace
     ISHIKO_LOG_TRACE(MAX_LOG_LEVEL, "message");
 
     ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "");
@@ -142,12 +142,12 @@ void LoggingMacrosTests::IshikoLogTraceMacroTest2(Test& test)
 {
     std::stringstream stream;
     StreamLoggingSink sink(stream);
-    Logger logger(sink, Logger::Level::trace);
+    Logger logger(sink, LogLevel::trace);
 
 #undef MAX_LOG_LEVEL
-#define MAX_LOG_LEVEL Logger::Level::trace
+#define MAX_LOG_LEVEL LogLevel::trace
     ISHIKO_LOG_TRACE(MAX_LOG_LEVEL, "message");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message");
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message\n");
     ISHIKO_TEST_PASS();
 }

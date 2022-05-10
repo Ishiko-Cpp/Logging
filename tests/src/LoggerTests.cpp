@@ -44,7 +44,7 @@ void LoggerTests::ErrorTest1(Test& test)
 {
     std::stringstream stream;
     StreamLoggingSink sink(stream);
-    Logger logger(sink, Logger::Level::fatal);
+    Logger logger(sink, LogLevel::fatal);
 
     logger.error("message");
 
@@ -60,7 +60,7 @@ void LoggerTests::ErrorTest2(Test& test)
 
     logger.error("message");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message");
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message\n");
     ISHIKO_TEST_PASS();
 }
 
@@ -72,7 +72,7 @@ void LoggerTests::ErrorTest3(Test& test)
 
     logger.error("message: {}", "data");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message: data");
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message: data\n");
     ISHIKO_TEST_PASS();
 }
 
@@ -84,7 +84,7 @@ void LoggerTests::ErrorTest4(Test& test)
 
     logger.error("message: {}", Logger::KeyValue{ "key1", "value1" });
 
-    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message: key1, value1");
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message: key1, value1\n");
     ISHIKO_TEST_PASS();
 }
 
@@ -92,7 +92,7 @@ void LoggerTests::WarningTest1(Test& test)
 {
     std::stringstream stream;
     StreamLoggingSink sink(stream);
-    Logger logger(sink, Logger::Level::error);
+    Logger logger(sink, LogLevel::error);
 
     logger.warning("message");
 
@@ -108,7 +108,7 @@ void LoggerTests::WarningTest2(Test& test)
 
     logger.warning("message");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message");
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message\n");
     ISHIKO_TEST_PASS();
 }
 
@@ -120,7 +120,7 @@ void LoggerTests::WarningTest3(Test& test)
 
     logger.error("message: {}", "data");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message: data");
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message: data\n");
     ISHIKO_TEST_PASS();
 }
 
@@ -128,7 +128,7 @@ void LoggerTests::InfoTest1(Test& test)
 {
     std::stringstream stream;
     StreamLoggingSink sink(stream);
-    Logger logger(sink, Logger::Level::warning);
+    Logger logger(sink, LogLevel::warning);
 
     logger.info("message");
 
@@ -144,7 +144,7 @@ void LoggerTests::InfoTest2(Test& test)
 
     logger.info("message");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message");
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message\n");
     ISHIKO_TEST_PASS();
 }
 
@@ -156,7 +156,7 @@ void LoggerTests::InfoTest3(Test& test)
 
     logger.error("message: {}", "data");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message: data");
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message: data\n");
     ISHIKO_TEST_PASS();
 }
 
@@ -176,11 +176,11 @@ void LoggerTests::TraceTest2(Test& test)
 {
     std::stringstream stream;
     StreamLoggingSink sink(stream);
-    Logger logger(sink, Logger::Level::trace);
+    Logger logger(sink, LogLevel::trace);
 
     logger.trace("message");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message");
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message\n");
     ISHIKO_TEST_PASS();
 }
 
@@ -188,10 +188,10 @@ void LoggerTests::TraceTest3(Test& test)
 {
     std::stringstream stream;
     StreamLoggingSink sink(stream);
-    Logger logger(sink, Logger::Level::trace);
+    Logger logger(sink, LogLevel::trace);
 
     logger.error("message: {}", "data");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message: data");
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message: data\n");
     ISHIKO_TEST_PASS();
 }
