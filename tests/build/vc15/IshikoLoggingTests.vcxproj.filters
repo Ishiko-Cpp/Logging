@@ -26,6 +26,9 @@
     <ClInclude Include="..\..\src\NullLoggingSinkTests.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\StandardStreamsLoggingSinkTests.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\src\StreamLoggingSinkTests.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -41,6 +44,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\NullLoggingSinkTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\StandardStreamsLoggingSinkTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\StreamLoggingSinkTests.cpp">

@@ -27,7 +27,7 @@ void NullLoggingSinkTests::SendTest1(Test& test)
 {
     NullLoggingSink sink;
 
-    sink.send("message");
+    sink.send(LoggingSink::Record(LogLevel::info, "message"));
 
     ISHIKO_TEST_PASS();
 }

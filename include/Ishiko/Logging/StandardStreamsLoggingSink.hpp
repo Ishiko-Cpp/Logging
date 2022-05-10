@@ -4,15 +4,15 @@
     See https://github.com/ishiko-cpp/logging/blob/main/LICENSE.txt
 */
 
-#ifndef _ISHIKO_CPP_LOGGING_NULLLOGGINGSINK_HPP_
-#define _ISHIKO_CPP_LOGGING_NULLLOGGINGSINK_HPP_
+#ifndef _ISHIKO_CPP_LOGGING_STANDARDSTREAMSLOGGINGSINK_HPP_
+#define _ISHIKO_CPP_LOGGING_STANDARDSTREAMSLOGGINGSINK_HPP_
 
 #include "LoggingSink.hpp"
 
 namespace Ishiko
 {
 
- class NullLoggingSink : public LoggingSink
+ class StandardStreamsLoggingSink : public LoggingSink
 {
 public:
     void send(const Record& record) override;

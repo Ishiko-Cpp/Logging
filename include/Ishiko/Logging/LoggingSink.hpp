@@ -7,6 +7,7 @@
 #ifndef _ISHIKO_CPP_LOGGING_LOGGINGSINK_HPP_
 #define _ISHIKO_CPP_LOGGING_LOGGINGSINK_HPP_
 
+#include "LogLevel.hpp"
 #include <string>
 
 namespace Ishiko
@@ -15,7 +16,15 @@ namespace Ishiko
 class LoggingSink
 {
 public:
-    virtual void send(const std::string& record) = 0;
+    struct Record
+    {
+        Record(LogLevel level, const std::string& text);
+
+        LogLevel level;
+        const std::string& text;
+    };
+
+    virtual void send(const Record& record) = 0;
 };
 
 }
