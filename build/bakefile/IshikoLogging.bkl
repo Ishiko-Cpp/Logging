@@ -46,6 +46,7 @@ library IshikoLogging : fmt
     sources
     {
         ../../src/Logger.cpp
+        ../../src/LoggingSink.cpp
         ../../src/NullLoggingSink.cpp
         ../../src/StandardStreamsLoggingSink.cpp
         ../../src/StreamLoggingSink.cpp
