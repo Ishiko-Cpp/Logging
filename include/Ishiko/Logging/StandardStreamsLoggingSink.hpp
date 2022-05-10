@@ -7,4 +7,17 @@
 #ifndef _ISHIKO_CPP_LOGGING_STANDARDSTREAMSLOGGINGSINK_HPP_
 #define _ISHIKO_CPP_LOGGING_STANDARDSTREAMSLOGGINGSINK_HPP_
 
+#include "LoggingSink.hpp"
+
+namespace Ishiko
+{
+
+ class StandardStreamsLoggingSink : public LoggingSink
+{
+public:
+    void send(const std::string& record) override;
+};
+
+}
+
 #endif

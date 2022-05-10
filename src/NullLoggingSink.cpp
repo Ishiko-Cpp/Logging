@@ -6,12 +6,9 @@
 
 #include "NullLoggingSink.hpp"
 
-namespace Ishiko
-{
+using namespace Ishiko;
 
 void NullLoggingSink::send(const std::string& record)
 {
     // Do nothing
-}
-
 }

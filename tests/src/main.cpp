@@ -7,6 +7,7 @@
 #include "LoggerTests.hpp"
 #include "LoggingMacrosTests.hpp"
 #include "NullLoggingSinkTests.hpp"
+#include "StandardStreamsLoggingSinkTests.hpp"
 #include "StreamLoggingSinkTests.hpp"
 #include "Ishiko/Logging/linkoptions.hpp"
 #include <Ishiko/TestFramework/Core.hpp>
@@ -20,6 +21,7 @@ int main(int argc, char* argv[])
     TestSequence& theTests = theTestHarness.tests();
     theTests.append<NullLoggingSinkTests>();
     theTests.append<StreamLoggingSinkTests>();
+    theTests.append<StandardStreamsLoggingSinkTests>();
     theTests.append<LoggerTests>();
     theTests.append<LoggingMacrosTests>();
 

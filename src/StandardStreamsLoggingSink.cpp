@@ -5,3 +5,10 @@
 */
 
 #include "StandardStreamsLoggingSink.hpp"
+
+using namespace Ishiko;
+
+void StandardStreamsLoggingSink::send(const std::string& record)
+{
+    // TODO
+}
