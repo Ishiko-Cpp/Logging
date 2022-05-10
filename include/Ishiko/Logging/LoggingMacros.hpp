@@ -12,28 +12,28 @@
 // MY_PROJECT_MAX_LOG_LEVEL and create their own macros that call these macros e.g. MY_PROJECT_LOG_ERROR(...)
 // ISHIKO_LOG_ERROR(MY_PROJECT_MAX_LOG_LEVEL, ...)
 
-#define ISHIKO_LOG_ERROR(MAX_LOG_LEVEL, ...)           \
-    if (MAX_LOG_LEVEL >= Ishiko::Logger::Level::error) \
-    {                                                  \
-        logger.error(__VA_ARGS__);                     \
+#define ISHIKO_LOG_ERROR(MAX_LOG_LEVEL, ...)      \
+    if (MAX_LOG_LEVEL >= Ishiko::LogLevel::error) \
+    {                                             \
+        logger.error(__VA_ARGS__);                \
     }
 
-#define ISHIKO_LOG_WARNING(MAX_LOG_LEVEL, ...)           \
-    if (MAX_LOG_LEVEL >= Ishiko::Logger::Level::warning) \
-    {                                                    \
-        logger.warning(__VA_ARGS__);                     \
+#define ISHIKO_LOG_WARNING(MAX_LOG_LEVEL, ...)      \
+    if (MAX_LOG_LEVEL >= Ishiko::LogLevel::warning) \
+    {                                               \
+        logger.warning(__VA_ARGS__);                \
     }
 
-#define ISHIKO_LOG_INFO(MAX_LOG_LEVEL, ...)           \
-    if (MAX_LOG_LEVEL >= Ishiko::Logger::Level::info) \
-    {                                                 \
-        logger.info(__VA_ARGS__);                     \
+#define ISHIKO_LOG_INFO(MAX_LOG_LEVEL, ...)      \
+    if (MAX_LOG_LEVEL >= Ishiko::LogLevel::info) \
+    {                                            \
+        logger.info(__VA_ARGS__);                \
     }
 
-#define ISHIKO_LOG_TRACE(MAX_LOG_LEVEL, ...)           \
-    if (MAX_LOG_LEVEL >= Ishiko::Logger::Level::trace) \
-    {                                                  \
-        logger.trace(__VA_ARGS__);                     \
+#define ISHIKO_LOG_TRACE(MAX_LOG_LEVEL, ...)      \
+    if (MAX_LOG_LEVEL >= Ishiko::LogLevel::trace) \
+    {                                             \
+        logger.trace(__VA_ARGS__);                \
     }
 
 #endif

@@ -44,7 +44,7 @@ void LoggerTests::ErrorTest1(Test& test)
 {
     std::stringstream stream;
     StreamLoggingSink sink(stream);
-    Logger logger(sink, Logger::Level::fatal);
+    Logger logger(sink, LogLevel::fatal);
 
     logger.error("message");
 
@@ -92,7 +92,7 @@ void LoggerTests::WarningTest1(Test& test)
 {
     std::stringstream stream;
     StreamLoggingSink sink(stream);
-    Logger logger(sink, Logger::Level::error);
+    Logger logger(sink, LogLevel::error);
 
     logger.warning("message");
 
@@ -128,7 +128,7 @@ void LoggerTests::InfoTest1(Test& test)
 {
     std::stringstream stream;
     StreamLoggingSink sink(stream);
-    Logger logger(sink, Logger::Level::warning);
+    Logger logger(sink, LogLevel::warning);
 
     logger.info("message");
 
@@ -176,7 +176,7 @@ void LoggerTests::TraceTest2(Test& test)
 {
     std::stringstream stream;
     StreamLoggingSink sink(stream);
-    Logger logger(sink, Logger::Level::trace);
+    Logger logger(sink, LogLevel::trace);
 
     logger.trace("message");
 
@@ -188,7 +188,7 @@ void LoggerTests::TraceTest3(Test& test)
 {
     std::stringstream stream;
     StreamLoggingSink sink(stream);
-    Logger logger(sink, Logger::Level::trace);
+    Logger logger(sink, LogLevel::trace);
 
     logger.error("message: {}", "data");
 

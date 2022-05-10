@@ -8,6 +8,7 @@
 #define _ISHIKO_CPP_LOGGING_LOGGER_HPP_
 
 #include "LoggingSink.hpp"
+#include "LogLevel.hpp"
 #include <fmt/format.h>
 #include <string>
 
@@ -17,15 +18,6 @@ namespace Ishiko
 class Logger
 {
 public:
-    enum class Level
-    {
-        fatal = 1,
-        error = 2,
-        warning = 3,
-        info = 4,
-        trace = 5
-    };
-
     struct KeyValue
     {
         const char* key;
@@ -33,9 +25,9 @@ public:
     };
 
     Logger(LoggingSink& sink);
-    Logger(LoggingSink& sink, Level level);
+    Logger(LoggingSink& sink, LogLevel level);
 
-    void setLevel(Level level);
+    void setLevel(LogLevel level);
 
     template <typename... Args>
     void error(const std::string& message, Args&&... args);
@@ -51,13 +43,13 @@ public:
 
 private:
     LoggingSink& m_sink;
-    Level m_level;
+    LogLevel m_level;
 };
 
 template <typename... Args>
 void Logger::error(const std::string& message, Args&&... args)
 {
-    if (m_level >= Level::error)
+    if (m_level >= LogLevel::error)
     {
         std::string formattedMessage = fmt::format(message, std::forward<Args>(args)...);
         m_sink.send(formattedMessage);
@@ -67,7 +59,7 @@ void Logger::error(const std::string& message, Args&&... args)
 template <typename... Args>
 void Logger::warning(const std::string& message, Args&&... args)
 {
-    if (m_level >= Level::warning)
+    if (m_level >= LogLevel::warning)
     {
         std::string formattedMessage = fmt::format(message, std::forward<Args>(args)...);
         m_sink.send(formattedMessage);
@@ -77,7 +69,7 @@ void Logger::warning(const std::string& message, Args&&... args)
 template <typename... Args>
 void Logger::info(const std::string& message, Args&&... args)
 {
-    if (m_level >= Level::info)
+    if (m_level >= LogLevel::info)
     {
         std::string formattedMessage = fmt::format(message, std::forward<Args>(args)...);
         m_sink.send(formattedMessage);
@@ -87,7 +79,7 @@ void Logger::info(const std::string& message, Args&&... args)
 template <typename... Args>
 void Logger::trace(const std::string& message, Args&&... args)
 {
-    if (m_level >= Level::trace)
+    if (m_level >= LogLevel::trace)
     {
         std::string formattedMessage = fmt::format(message, std::forward<Args>(args)...);
         m_sink.send(formattedMessage);
