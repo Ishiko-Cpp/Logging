@@ -60,7 +60,7 @@ void LoggerTests::ErrorTest2(Test& test)
 
     logger.error("message");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message");
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message\n");
     ISHIKO_TEST_PASS();
 }
 
@@ -72,7 +72,7 @@ void LoggerTests::ErrorTest3(Test& test)
 
     logger.error("message: {}", "data");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message: data");
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message: data\n");
     ISHIKO_TEST_PASS();
 }
 
@@ -84,7 +84,7 @@ void LoggerTests::ErrorTest4(Test& test)
 
     logger.error("message: {}", Logger::KeyValue{ "key1", "value1" });
 
-    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message: key1, value1");
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message: key1, value1\n");
     ISHIKO_TEST_PASS();
 }
 
@@ -108,7 +108,7 @@ void LoggerTests::WarningTest2(Test& test)
 
     logger.warning("message");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message");
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message\n");
     ISHIKO_TEST_PASS();
 }
 
@@ -120,7 +120,7 @@ void LoggerTests::WarningTest3(Test& test)
 
     logger.error("message: {}", "data");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message: data");
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message: data\n");
     ISHIKO_TEST_PASS();
 }
 
@@ -144,7 +144,7 @@ void LoggerTests::InfoTest2(Test& test)
 
     logger.info("message");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message");
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message\n");
     ISHIKO_TEST_PASS();
 }
 
@@ -156,7 +156,7 @@ void LoggerTests::InfoTest3(Test& test)
 
     logger.error("message: {}", "data");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message: data");
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message: data\n");
     ISHIKO_TEST_PASS();
 }
 
@@ -180,7 +180,7 @@ void LoggerTests::TraceTest2(Test& test)
 
     logger.trace("message");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message");
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message\n");
     ISHIKO_TEST_PASS();
 }
 
@@ -192,6 +192,6 @@ void LoggerTests::TraceTest3(Test& test)
 
     logger.error("message: {}", "data");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message: data");
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message: data\n");
     ISHIKO_TEST_PASS();
 }

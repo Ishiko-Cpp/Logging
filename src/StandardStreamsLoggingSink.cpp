@@ -5,10 +5,18 @@
 */
 
 #include "StandardStreamsLoggingSink.hpp"
-
+#include <iostream>
 using namespace Ishiko;
 
 void StandardStreamsLoggingSink::send(const Record& record)
 {
-    // TODO
+    // TODO: allow setting the threshold
+    if (record.level > LogLevel::error)
+    {
+        std::cout << record.text << std::endl;
+    }
+    else
+    {
+        std::cerr << record.text << std::endl;
+    }
 }

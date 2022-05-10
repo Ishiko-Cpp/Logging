@@ -36,7 +36,7 @@ void LoggingMacrosTests::IshikoLogErrorMacroTest1(Test& test)
 #define MAX_LOG_LEVEL LogLevel::error
     ISHIKO_LOG_ERROR(MAX_LOG_LEVEL, "message");
     
-    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message");
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message\n");
     ISHIKO_TEST_PASS();
 }
 
@@ -78,7 +78,7 @@ void LoggingMacrosTests::IshikoLogWarningMacroTest1(Test& test)
 #define MAX_LOG_LEVEL LogLevel::warning
     ISHIKO_LOG_WARNING(MAX_LOG_LEVEL, "message");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message");
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message\n");
     ISHIKO_TEST_PASS();
 }
 
@@ -106,7 +106,7 @@ void LoggingMacrosTests::IshikoLogInfoMacroTest1(Test& test)
 #define MAX_LOG_LEVEL LogLevel::info
     ISHIKO_LOG_INFO(MAX_LOG_LEVEL, "message");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message");
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message\n");
     ISHIKO_TEST_PASS();
 }
 
@@ -148,6 +148,6 @@ void LoggingMacrosTests::IshikoLogTraceMacroTest2(Test& test)
 #define MAX_LOG_LEVEL LogLevel::trace
     ISHIKO_LOG_TRACE(MAX_LOG_LEVEL, "message");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message");
+    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message\n");
     ISHIKO_TEST_PASS();
 }

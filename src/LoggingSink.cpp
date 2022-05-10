@@ -8,7 +8,7 @@
 
 using namespace Ishiko;
 
-LoggingSink::Record::Record(const std::string& text)
-    : text(text)
+LoggingSink::Record::Record(LogLevel level, const std::string& text)
+    : level(level), text(text)
 {
 }

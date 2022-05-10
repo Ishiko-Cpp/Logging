@@ -52,7 +52,7 @@ void Logger::error(const std::string& message, Args&&... args)
     if (m_level >= LogLevel::error)
     {
         std::string formattedMessage = fmt::format(message, std::forward<Args>(args)...);
-        m_sink.send(formattedMessage);
+        m_sink.send(LoggingSink::Record(m_level, formattedMessage));
     }
 }
 
@@ -62,7 +62,7 @@ void Logger::warning(const std::string& message, Args&&... args)
     if (m_level >= LogLevel::warning)
     {
         std::string formattedMessage = fmt::format(message, std::forward<Args>(args)...);
-        m_sink.send(formattedMessage);
+        m_sink.send(LoggingSink::Record(m_level, formattedMessage));
     }
 }
 
@@ -72,7 +72,7 @@ void Logger::info(const std::string& message, Args&&... args)
     if (m_level >= LogLevel::info)
     {
         std::string formattedMessage = fmt::format(message, std::forward<Args>(args)...);
-        m_sink.send(formattedMessage);
+        m_sink.send(LoggingSink::Record(m_level, formattedMessage));
     }
 }
 
@@ -82,7 +82,7 @@ void Logger::trace(const std::string& message, Args&&... args)
     if (m_level >= LogLevel::trace)
     {
         std::string formattedMessage = fmt::format(message, std::forward<Args>(args)...);
-        m_sink.send(formattedMessage);
+        m_sink.send(LoggingSink::Record(m_level, formattedMessage));
     }
 }
 

@@ -33,7 +33,8 @@ void StandardStreamsLoggingSinkTests::SendTest1(Test& test)
     CurrentProcess::RedirectStandardErrorToFile(
         test.context().getTestOutputPath("StandardStreamsLoggingSinkTests_SendTest1_err.txt"));
 
-    sink.send(LoggingSink::Record("message"));
+    sink.send(LoggingSink::Record(LogLevel::info, "info message"));
+    sink.send(LoggingSink::Record(LogLevel::error, "error message"));
 
     CurrentProcess::RedirectStandardOutputToTerminal();
     CurrentProcess::RedirectStandardErrorToTerminal();
