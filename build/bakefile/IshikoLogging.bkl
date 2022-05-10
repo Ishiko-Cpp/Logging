@@ -38,6 +38,7 @@ library IshikoLogging : fmt
         ../../include/Ishiko/Logging/Logger.hpp
         ../../include/Ishiko/Logging/LoggingMacros.hpp
         ../../include/Ishiko/Logging/LoggingSink.hpp
+        ../../include/Ishiko/Logging/LogLevel.hpp
         ../../include/Ishiko/Logging/NullLoggingSink.hpp
         ../../include/Ishiko/Logging/StandardStreamsLoggingSink.hpp
         ../../include/Ishiko/Logging/StreamLoggingSink.hpp

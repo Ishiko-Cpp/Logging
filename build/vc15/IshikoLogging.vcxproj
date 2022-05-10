@@ -162,6 +162,7 @@
     <ClInclude Include="..\..\include\Ishiko\Logging\Logger.hpp" />
     <ClInclude Include="..\..\include\Ishiko\Logging\LoggingMacros.hpp" />
     <ClInclude Include="..\..\include\Ishiko\Logging\LoggingSink.hpp" />
+    <ClInclude Include="..\..\include\Ishiko\Logging\LogLevel.hpp" />
     <ClInclude Include="..\..\include\Ishiko\Logging\NullLoggingSink.hpp" />
     <ClInclude Include="..\..\include\Ishiko\Logging\StandardStreamsLoggingSink.hpp" />
     <ClInclude Include="..\..\include\Ishiko\Logging\StreamLoggingSink.hpp" />

@@ -32,6 +32,9 @@
     <ClInclude Include="..\..\include\Ishiko\Logging\LoggingSink.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\Ishiko\Logging\LogLevel.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\include\Ishiko\Logging\NullLoggingSink.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
