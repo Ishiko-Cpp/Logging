@@ -15,7 +15,7 @@ namespace Ishiko
  class NullLoggingSink : public LoggingSink
 {
 public:
-    void send(const std::string& record) override;
+    void send(const Record& record) override;
 };
 
 }

@@ -18,6 +18,10 @@ int main(int argc, char* argv[])
 {
     TestHarness theTestHarness("IshikoLogging");
 
+    theTestHarness.context().setTestDataDirectory("../../data");
+    theTestHarness.context().setTestOutputDirectory("../../output");
+    theTestHarness.context().setReferenceDataDirectory("../../reference");
+
     TestSequence& theTests = theTestHarness.tests();
     theTests.append<NullLoggingSinkTests>();
     theTests.append<StreamLoggingSinkTests>();

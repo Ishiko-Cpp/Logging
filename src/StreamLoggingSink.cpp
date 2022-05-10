@@ -14,9 +14,9 @@ StreamLoggingSink::StreamLoggingSink(std::ostream& stream)
 {
 }
 
-void StreamLoggingSink::send(const std::string& record)
+void StreamLoggingSink::send(const Record& record)
 {
-    m_stream << record;
+    m_stream << record.text;
 }
 
 std::ostream& StreamLoggingSink::stream()

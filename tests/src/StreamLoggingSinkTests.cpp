@@ -32,7 +32,7 @@ void StreamLoggingSinkTests::SendTest1(Test& test)
     std::stringstream stream;
     StreamLoggingSink sink(stream);
 
-    sink.send("message");
+    sink.send(LoggingSink::Record("message"));
 
     ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message");
     ISHIKO_TEST_PASS();

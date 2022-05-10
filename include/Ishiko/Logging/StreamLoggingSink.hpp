@@ -18,7 +18,7 @@ class StreamLoggingSink : public LoggingSink
 public:
     StreamLoggingSink(std::ostream& stream);
 
-    void send(const std::string& record) override;
+    void send(const Record& record) override;
 
     std::ostream& stream();
 

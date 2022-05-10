@@ -4,11 +4,11 @@
     See https://github.com/ishiko-cpp/logging/blob/main/LICENSE.txt
 */
 
-#include "NullLoggingSink.hpp"
+#include "LoggingSink.hpp"
 
 using namespace Ishiko;
 
-void NullLoggingSink::send(const Record& record)
+LoggingSink::Record::Record(const std::string& text)
+    : text(text)
 {
-    // Do nothing
 }

@@ -8,7 +8,7 @@
 
 using namespace Ishiko;
 
-void StandardStreamsLoggingSink::send(const std::string& record)
+void StandardStreamsLoggingSink::send(const Record& record)
 {
     // TODO
 }

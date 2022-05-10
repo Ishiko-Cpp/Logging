@@ -15,7 +15,14 @@ namespace Ishiko
 class LoggingSink
 {
 public:
-    virtual void send(const std::string& record) = 0;
+    struct Record
+    {
+        Record(const std::string& text);
+
+        const std::string& text;
+    };
+
+    virtual void send(const Record& record) = 0;
 };
 
 }

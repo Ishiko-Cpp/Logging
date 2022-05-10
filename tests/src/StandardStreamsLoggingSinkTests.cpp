@@ -28,10 +28,19 @@ void StandardStreamsLoggingSinkTests::SendTest1(Test& test)
 {
     StandardStreamsLoggingSink sink;
 
-    CurrentProcess::RedirectStandardOutputToFile();
+    CurrentProcess::RedirectStandardOutputToFile(
+        test.context().getTestOutputPath("StandardStreamsLoggingSinkTests_SendTest1_out.txt"));
+    CurrentProcess::RedirectStandardErrorToFile(
+        test.context().getTestOutputPath("StandardStreamsLoggingSinkTests_SendTest1_err.txt"));
 
-    sink.send("message");
+    sink.send(LoggingSink::Record("message"));
 
-    ISHIKO_TEST_FAIL_IF_NEQ(stream.str(), "message");
+    CurrentProcess::RedirectStandardOutputToTerminal();
+    CurrentProcess::RedirectStandardErrorToTerminal();
+
+    ISHIKO_TEST_FAIL_IF_FILES_NEQ("StandardStreamsLoggingSinkTests_SendTest1_out.txt",
+        "StandardStreamsLoggingSinkTests_SendTest1_out.txt");
+    ISHIKO_TEST_FAIL_IF_FILES_NEQ("StandardStreamsLoggingSinkTests_SendTest1_err.txt",
+        "StandardStreamsLoggingSinkTests_SendTest1_err.txt");
     ISHIKO_TEST_PASS();
 }
