@@ -52,6 +52,9 @@
     <ClCompile Include="..\..\src\LoggingSink.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\LogLevel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\src\NullLoggingSink.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
