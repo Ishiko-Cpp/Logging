@@ -29,7 +29,7 @@ public:
 
     LogLevel();
     LogLevel(Value value);
-    LogLevel FromString(const std::string& level);
+    static LogLevel FromString(const std::string& level);
 
     bool operator==(LogLevel::Value level) const;
     bool operator!=(LogLevel::Value level) const;
