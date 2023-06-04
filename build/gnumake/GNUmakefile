@@ -65,7 +65,7 @@ endif
 # 
 
 # Path to the fmt installation
-ISHIKO_CPP_FMT_ROOT ?= $(ISHIKO_CPP_THIRD_PARTY_FMT)
+ISHIKO_CPP_FMT_ROOT ?= $(FMT_ROOT)
 
 # ------------
 
