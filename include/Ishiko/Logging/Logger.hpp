@@ -97,7 +97,7 @@ public:
     }
 
     template <typename FormatContext>
-    auto format(const Ishiko::Logger::KeyValue& kv, FormatContext& ctx) -> decltype(ctx.out()) {
+    auto format(Ishiko::Logger::KeyValue& kv, FormatContext& ctx) -> decltype(ctx.out()) {
         return format_to(ctx.out(), "{}, {}", kv.key, kv.value);
     }
 };
